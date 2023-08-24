@@ -1,0 +1,51 @@
+.header{
+    background-color: #005792;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.headerContainer{
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px 0 10px 0;
+}
+
+.headerList{
+    display: flex;
+    gap: 40px;
+}
+
+.headerListItem{
+    display: flex;
+    gap: 10px
+}
+
+.headerListItem.active{
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.headerSearchBar{
+    display: flex;
+    gap: 25px;
+    margin-top: 50px;
+    background-color: whi;
+
+}
+
+.headerSearchItem{
+    display: flex;
+    gap: 8px
+}
+
+.date{
+    position: absolute;
+    top: 190px;
+}
+
+.routerLink{
+    text-decoration: none;
+    color: white;
+}

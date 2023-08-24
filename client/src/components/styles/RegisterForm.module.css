@@ -1,0 +1,61 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.form label {
+  color: #6e6c6c;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+.form input {
+  display: flex;
+  padding: 10px;
+  border: 1px solid #6e6c6c;
+  border-radius: 10px;
+  width: 350px;
+  cursor: pointer;
+}
+.form input::-moz-placeholder {
+  font-size: 18px;
+}
+.form input::placeholder {
+  font-size: 18px;
+}
+.form input:focus {
+  border: 1px solid #4481eb;
+}
+.form input:focus::-moz-placeholder {
+  color: #4481eb;
+}
+.form input:focus::placeholder {
+  color: #4481eb;
+}
+.form button {
+  margin: 10%;
+  text-align: center;
+  text-transform: uppercase;
+  width: 200px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+.form button:hover {
+  background-position: 100% 0;
+  transition: all 0.4s ease-in-out;
+}
+.form button:focus {
+  outline: none;
+}/*# sourceMappingURL=RegisterForm.module.css.map */

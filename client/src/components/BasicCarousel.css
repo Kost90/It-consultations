@@ -1,0 +1,23 @@
+.carouselUl{
+    margin:0;
+    padding:0;
+}
+
+.carouselImg{
+    width:350px;
+    margin-top: 20px;
+}
+
+.carouselLi{
+    display: flex;
+    flex-direction: column;
+}
+
+.carouselNumbers{
+    font-size: 18pt;
+}
+
+.container{
+    width: 800px;
+}
+

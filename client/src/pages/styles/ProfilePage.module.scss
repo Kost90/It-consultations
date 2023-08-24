@@ -1,0 +1,11 @@
+.flex_container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(
+        circle farthest-corner at 10% 20%,
+        rgba(102, 116, 236, 1) 0%,
+        rgba(50, 231, 219, 1) 90%
+    );
+    height: 100vh;
+}
