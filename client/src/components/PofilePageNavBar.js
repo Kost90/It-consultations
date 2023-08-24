@@ -1,18 +1,16 @@
 import React from "react";
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { FetchLoginUser, DeleteLoginUser } from "../api/LoginInfoSlice";
+import { DeleteLoginUser } from "../api/LoginInfoSlice";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
-import styles from "./styles/Navbar.module.css";
+import styles from "./styles/ProfilePageNAvBAr.module.css";
 
 let user = {};
 
-const Navbar = () => {
+const ProfilePageNavBar = () => {
   const dispatch = useDispatch();
-  const { LoginUser, statuslogin, errorlogin } = useSelector(
+  const { LoginUser} = useSelector(
     (state) => state.logininfo
   );
 
@@ -22,16 +20,6 @@ const Navbar = () => {
     user = LoginUser;
   }
 
-  useEffect(() => {
-    const FetchData = async () => {
-      const data = await JSON.parse(localStorage.getItem("username"));
-      if (data) {
-        dispatch(FetchLoginUser(data));
-      }
-    };
-    FetchData();
-  }, [dispatch]);
-
   const HandelClick = (id) => {
     dispatch(DeleteLoginUser(id));
     localStorage.clear();
@@ -39,12 +27,9 @@ const Navbar = () => {
     window.location.reload();
   };
 
-  console.log(user);
-
   return (
-    <div className="navbar">
-      <div className="navBarContainer">
-        {/* <span className="logo"> IT Consultancy</span> */}
+    <div className={styles.navbar}>
+      <div className={styles.navBarContainer}>
         <div className="logo">
           <FontAwesomeIcon icon={faPeopleGroup} />
           <span>
@@ -53,11 +38,11 @@ const Navbar = () => {
             </Link>
           </span>
         </div>
-        <div className={styles.flex_container_navbar_button}>
+        <div className={styles.flex_container_profilenavbar_button}>
           {user !== undefined ? (
             <>
               <button className={styles.button_navbar}>
-                <Link to={`/profilepage/${user.username}`}>Profile</Link>
+                <Link to={`/`}>Home</Link>
               </button>
               <button
                 type="button"
@@ -71,12 +56,12 @@ const Navbar = () => {
             </>
           ) : (
             <>
-            <button className={styles.button_navbar}>
-            <Link to="/register">Register</Link>
-            </button>
-            <button className={styles.button_navbar}>
-              <Link to="/loginpage">Login</Link>
-            </button>
+              <button className={styles.button_navbar}>
+                <Link to="/register">Register</Link>
+              </button>
+              <button className={styles.button_navbar}>
+                <Link to="/loginpage">Login</Link>
+              </button>
             </>
           )}
         </div>
@@ -85,4 +70,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default ProfilePageNavBar;

@@ -1,7 +1,9 @@
 .flex_container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: radial-gradient(circle farthest-corner at 10% 20%, rgb(102, 116, 236) 0%, rgb(50, 231, 219) 90%);
-  height: 100vh;
+  padding-top: 30px;
+  height: 100%;
 }/*# sourceMappingURL=ProfilePage.module.css.map */

@@ -1,0 +1,30 @@
+.flex_container_answers {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  padding: 50px;
+  margin: 15px;
+  border-radius: 15px;
+}
+.flex_container_answers h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.flex_container_ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+  border: 3px solid rgb(63, 63, 65);
+  border-radius: 10px;
+  padding: 10px;
+  width: 350px;
+}
+.flex_container_ul li {
+  font-size: 18px;
+}/*# sourceMappingURL=ViewAnswers.module.css.map */

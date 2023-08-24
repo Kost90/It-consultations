@@ -31,7 +31,7 @@ function Registerpage() {
     <div className={styles.form_container}>
     {show ? (
         <>
-          <button type="button">
+          <button type="button" className={styles.button_register_page}>
             <Link to={`/profilepage/${username}`}>GO TO YOUR PROFILE PAGE</Link>
           </button>
         </>

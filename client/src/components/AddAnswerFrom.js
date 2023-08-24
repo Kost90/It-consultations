@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { memo } from "react";
 import { useDispatch } from "react-redux";
 import { addAnswer } from "../api/AnswerSlicer";
+import styles from './styles/AddAnswerForm.module.css'
 
 export const AddAnswerForm = memo(({ to, from, id, Titel }) => {
   const dispatch = useDispatch();
@@ -27,13 +28,13 @@ export const AddAnswerForm = memo(({ to, from, id, Titel }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.flex_container_addanswers}>
       <div>
         <label htmlFor="titel">Write answer:</label>
         <br />
         <textarea
-          cols="30"
-          rows="10"
+          // cols="30"
+          // rows="10"
           {...register("content", { required: true })}
         ></textarea>
       </div>
