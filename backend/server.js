@@ -4,7 +4,7 @@ const {testConnection} = require('./models/conn');
 const dotenv = require('dotenv');
 // const {createTables} = require('./models/setUp')
 
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 const userRoutes = require("./Routes/UserRoutes");
 const questionsRoutes = require("./Routes/QuestionsRoutes");
@@ -19,14 +19,14 @@ testConnection();
 
 dotenv.config();
 
-const connect = async ()=>{
-    try {
-        await mongoose.connect(process.env.MONGO);
-        console.log("Connected to MongoDB")
-    } catch (error) {
-        throw error;
-    }
-}
+// const connect = async ()=>{
+//     try {
+//         await mongoose.connect(process.env.MONGO);
+//         console.log("Connected to MongoDB")
+//     } catch (error) {
+//         throw error;
+//     }
+// }
 
 app.use(cors());
 app.use(express.json());
