@@ -78,7 +78,7 @@ export const DeleteLoginUser = createAsyncThunk(
   "logininfo/DeleteLoginUser",
   async function (id, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`${process.env.REACT_APP_backendURL}/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_backendURL}/loginuser/${id}`, {
         method: "DELETE",
       });
 
