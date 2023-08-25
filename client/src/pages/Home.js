@@ -9,7 +9,6 @@ const Home = () => {
     <div>
       <Navbar />
       <Header />
-      <BasicCarousel />
       <div className="homeBody">
         <h1>Welcome to Triple Consult</h1>
         <h3>
@@ -23,6 +22,7 @@ const Home = () => {
       <div className="homeContainer">
         <div className="homeServices">Our services</div>
       </div>
+      <BasicCarousel />
     </div>
   );
 };

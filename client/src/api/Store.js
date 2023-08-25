@@ -3,6 +3,9 @@ import usersReducer from '../api/UsersSlicer';
 import loginReducer from '../api/LoginInfoSlice';
 import questionsReducer from '../api/QuestionsSlicer';
 import answersReducer from './AnswerSlicer';
+import ShowQuestionReducer from './ShowQuestionSlicer';
+import ShowAnswersReducer from './ShowAnswersSlicer';
+import ShowAddQuestionsReducer from './ShowAddQuestionSlicer'
 
 export const Store = configureStore({
     reducer:{
@@ -10,5 +13,8 @@ export const Store = configureStore({
         logininfo: loginReducer,
         questions: questionsReducer,
         answers: answersReducer,
+        showQuestion: ShowQuestionReducer,
+        showAns: ShowAnswersReducer,
+        showAddQuestions: ShowAddQuestionsReducer,
     }
 })

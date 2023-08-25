@@ -1,56 +1,35 @@
-// import 'bootstrap/dist/css/bootstrap.min.css'
-import Carousel from "react-bootstrap/Carousel";
+import "slick-carousel/slick/slick-theme.css";
 import "./BasicCarousel.css";
+import Slider from "react-slick";
 import tripple from "../assets/tripple.jpg";
 import law from "../assets/law.jpg";
 import it from "../assets/it.jpg";
 
-const BasicCarousel = () => {
+export default function SimpleSlider() {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+  };
   return (
-    <>
-      <div className="container">
-        <div className="p=5">
-          <Carousel interval={5000}>
-            <Carousel.Item>
-              <img
-                style={{ maxHeight: "45vh" }}
-                className="d-block w-100"
-                src={law}
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h3>First Pancake Image Title</h3>
-                <p>First Slide decription.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                style={{ maxHeight: "45vh" }}
-                className="d-block w-100"
-                src={it}
-                alt="Second slide"
-              />
-              <Carousel.Caption>
-                <h3>Second slide Image </h3>
-                <p>Second slide description</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                style={{ maxHeight: "45vh" }}
-                className="d-block w-100"
-                src={tripple}
-                alt="Third slide"
-              />
-              <Carousel.Caption>
-                <h3>Third Slide Image</h3>
-                <p>Third Slide Description.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-        </div>
+    <Slider {...settings}>
+      <div>
+        <img
+          style={{ height: "500px", width: "100%", maxWidth: "800px"}}
+          src={law}
+          alt="First slide"
+        />
       </div>
-    </>
+      <div>
+        <img style={{ height: "500px", width: "100%", maxWidth: "800px"}} src={it} alt="Second slide" />
+      </div>
+      <div>
+        <img style={{ height: "500px", width: "100%", maxWidth: "800px"}} src={tripple} alt="Third slide" />
+      </div>
+    </Slider>
   );
-};
-export default BasicCarousel;
+}

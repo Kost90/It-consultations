@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+// import {URL} from '../../config'
 
 export const FetchLoginUser = createAsyncThunk(
   "logininfo/FetchLoginUser",
   async function (username, { rejectWithValue, dispatch }) {
     try {
       const response = await fetch(
-        `http://localhost:8000/loginuser/${username}`
+        `${process.env.REACT_APP_backendURL}/loginuser/${username}`
       );
 
       if (!response.ok) {
@@ -28,7 +29,7 @@ export const GetUserInfo = createAsyncThunk(
   async function (LogInfo, { rejectWithValue, dispatch }) {
     try {
       const response = await fetch(
-        `http://localhost:8000/users/${LogInfo.password}/${LogInfo.username}`
+        `${process.env.REACT_APP_backendURL}/users/${LogInfo.password}/${LogInfo.username}`
       );
 
       if (!response.ok) {
@@ -51,7 +52,7 @@ export const AddLoginUserInfo = createAsyncThunk(
   "logininfo/AddLoginUserInfo",
   async function (user, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`http://localhost:8000/loginuser`, {
+      const response = await fetch(`${process.env.REACT_APP_backendURL}/loginuser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +78,7 @@ export const DeleteLoginUser = createAsyncThunk(
   "logininfo/DeleteLoginUser",
   async function (id, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`http://localhost:8000/loginuser/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_backendURL}/${id}`, {
         method: "DELETE",
       });
 

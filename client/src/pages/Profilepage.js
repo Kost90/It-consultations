@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import UserInfoDisplay from "../components/Userinfo";
 import ProfilePageNavBar from '../components/PofilePageNavBar';
+import ProfilePageSideBar from "../components/ProfilePageSideBar";
 import { FetchLoginUser } from "../api/LoginInfoSlice";
 import LoginForm from "../components/LoginForm";
 import styles from "./styles/ProfilePage.module.css";
@@ -30,7 +31,13 @@ function Profilepage() {
         {LoginUser.length !== 0 ? (
           <>
           <ProfilePageNavBar/>
-            <UserInfoDisplay />
+          <div className={styles.flex_container_row}>
+          <ProfilePageSideBar/>
+          <UserInfoDisplay />
+          </div>
+         
+          
+          
           </>
         ) : (
           <>

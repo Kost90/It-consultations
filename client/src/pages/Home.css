@@ -1,21 +1,26 @@
 h3{
     margin-left: 50px;
+    width: 800px;
+    color: whitesmoke;
+    opacity: 0.75;
 }
 
 .homeBody{
-    margin-top: -20px;
-    background: url("../assets/bg.png");
+    /* margin-top: 30px; */
+    background: url("../assets/pexels-fauxels-3183183.jpg");
     background-size: cover;
-    height: 400px;
+    height: 600px;
 }
 
 .homeBody > h1{
+    margin-left: 50px;
     font-size: 30pt;
     padding-top: 15%;
+    color: white;
 }
 
 .homeServices{
-    margin-top: 5px;
+    /* margin-top: 5px; */
     font-size: 30px;
     color: white;
     text-align: center;

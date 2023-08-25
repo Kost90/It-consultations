@@ -1,11 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+// import {URL} from '../config'
+
+// URL: process.env.REACT_APP_backendURL;
+
+// console.log(URL);
 
 export const FetchUserAnswers = createAsyncThunk(
   "answers/FetchAnswers",
   async function (username, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`http://localhost:8000/answers/${username}`);
-
+      const response = await fetch(`${process.env.REACT_APP_backendURL}/answers/${username}`);
       if (!response.ok) {
         console.log("error");
         throw new Error("Server error");
@@ -24,7 +28,7 @@ export const FetchStaffAnswers = createAsyncThunk(
   async function (answerfrom, { rejectWithValue, dispatch }) {
     try {
       const response = await fetch(
-        `http://localhost:8000/answers/staff/${answerfrom}`
+        `${process.env.REACT_APP_backendURL}/answers/${answerfrom}`
       );
 
       if (!response.ok) {
@@ -44,7 +48,7 @@ export const addAnswer = createAsyncThunk(
   "users/addAnswer",
   async function (answer, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`http://localhost:8000/answers`, {
+      const response = await fetch(`${process.env.REACT_APP_backendURL}/answers`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

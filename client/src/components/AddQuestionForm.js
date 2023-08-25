@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { memo } from "react";
 import { useDispatch } from "react-redux";
 import { addQuestion } from "../api/QuestionsSlicer";
+import styles from "./styles/AddQuestionForm.module.css";
 
 export const AddQuestionForm = memo(({ id, from }) => {
   const dispatch = useDispatch();
@@ -27,34 +28,31 @@ export const AddQuestionForm = memo(({ id, from }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <div>
-          <select {...register("to", { required: true })}>
-            <option value="" disabled>
-              Choose consultant
-            </option>
-            <option value="Konstantyn">Konstantyn</option>
-            <option value="Manuel">Manuel</option>
-            <option value="Prince">Prince</option>
-          </select>
-          {errors.to && <div style={{ color: "red" }}>Choose consultant</div>}
-        </div>
-        <label htmlFor="titel">Enter titel:</label>
-        <br />
-        <input type="text" {...register("titel", { required: true })} />
-        {errors.titel && <div style={{ color: "red" }}>Enter titel</div>}
-      </div>
-      <br />
-      <div>
-        <label htmlFor="titel">Write question:</label>
-        <br />
-        <textarea
-          cols="30"
-          rows="10"
-          {...register("content", { required: true })}
-        ></textarea>
-      </div>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={styles.flex_container_addquestions}
+    >
+      <select {...register("to", { required: true })}>
+        <option value="" disabled>
+          Choose consultant
+        </option>
+        <option value="Konstantyn">Konstantyn</option>
+        <option value="Manuel">Manuel</option>
+        <option value="Prince">Prince</option>
+      </select>
+      {errors.to && <div style={{ color: "red" }}>Choose consultant</div>}
+      <input
+        type="text"
+        {...register("titel", { required: true })}
+        placeholder="Titel"
+      />
+      {errors.titel && <div style={{ color: "red" }}>Enter titel</div>}
+      <textarea
+        cols="30"
+        rows="10"
+        {...register("content", { required: true })}
+        placeholder="write message"
+      ></textarea>
       <button type="submit">Send</button>
     </form>
   );

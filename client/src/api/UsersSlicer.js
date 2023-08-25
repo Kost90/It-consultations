@@ -1,11 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { AddLoginUserInfo } from "./LoginInfoSlice";
+// import {URL} from '../config'
+
+// const URL = process.env.REACT_APP_backendURL;
+
+
 
 export const FetchAllUsers = createAsyncThunk(
   "users/FetchUser",
   async function (_, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`http://localhost:8000/users`);
+      const response = await fetch(`${process.env.REACT_APP_backendURL}/users`);
 
       if (!response.ok) {
         console.log("error");
@@ -28,7 +33,7 @@ export const AddNewUser = createAsyncThunk(
   "users/AddNewUser",
   async function (user, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`http://localhost:8000/users`, {
+      const response = await fetch(`${process.env.REACT_APP_backendURL}/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
