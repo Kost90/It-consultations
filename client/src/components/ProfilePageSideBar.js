@@ -38,10 +38,8 @@ function ProfilePageSideBar() {
   const HandelClickAddQuestion = () => {
     if (showAddQuestion === false) {
       dispatch(ShowAddQ(true));
-      console.log(showAddQuestion);
     } else {
       dispatch(ShowAddQ(false));
-      console.log(showAddQuestion);
     }
   };
 

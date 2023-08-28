@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FetchUserAnswers } from "../api/AnswerSlicer";
 import { FetchStaffAnswers } from "../api/AnswerSlicer";
 import styles from './styles/ViewAnswers.module.css'
 
 function ViewAnswers({ username }) {
-  const [answer, setAnswer] = useState([]);
   const dispatch = useDispatch();
   const { answers, statusAnswers, errorAnswers } = useSelector(
     (state) => state.answers
@@ -15,22 +14,18 @@ function ViewAnswers({ username }) {
     const FetchData = async (u) => {
       if (u.role === "user") {
         const data = await dispatch(FetchUserAnswers(u.username));
-        setAnswer(data);
         return data;
       } else {
         const data = await dispatch(FetchStaffAnswers(u.username));
-        setAnswer(data);
         return data;
       }
     };
     FetchData(username);
   }, [dispatch]);
 
-  console.log(answers);
-
   return (
     <>
-      {statusAnswers === "loading" && <h2>Answers Loading...</h2>}
+      {statusAnswers === "loading" && <h1>Answers Loading...</h1>}
       <div className={styles.flex_container_answers}>
       <h2>Answers:</h2>
       {answers.map((element) => (

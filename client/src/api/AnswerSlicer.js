@@ -1,9 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import {URL} from '../config'
-
-// URL: process.env.REACT_APP_backendURL;
-
-// console.log(URL);
 
 export const FetchUserAnswers = createAsyncThunk(
   "answers/FetchAnswers",
@@ -15,6 +10,8 @@ export const FetchUserAnswers = createAsyncThunk(
         throw new Error("Server error");
       }
       const data = await response.json();
+
+      dispatch(addAnswersState(data));
 
       return await data;
     } catch (error) {

@@ -9,7 +9,7 @@ function Loginpage() {
   const [username, setUsername] = useState("");
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
-  const { statuslogin, errorlogin } = useSelector((state) => state.logininfo);
+  const {statuslogin, errorlogin } = useSelector((state) => state.logininfo);
 
   const handelFunction = () => {
     setShow(true);
@@ -19,8 +19,9 @@ function Loginpage() {
     const FetchData = async () => {
       const data = await JSON.parse(localStorage.getItem("username"));
       if (data) {
-        setUsername(data);
-        dispatch(FetchLoginUser(data));
+      setUsername(data);
+      const info = await dispatch(FetchLoginUser(data));
+      return info
       }
     };
     FetchData();
@@ -31,9 +32,9 @@ function Loginpage() {
     <div className={styles.container}>
       <div className={styles.form_container}> 
       <h1>SIGN IN</h1>
-      {show ? (
+      {statuslogin === "loading" && <h1>Loading...</h1>}
+      {statuslogin === 'resolved' ? (
         <>
-          {statuslogin === "loading" && <h2>Loading...</h2>}
           {errorlogin && <h2>Error: Server error</h2>}
           <div className={styles.flex_container}>
             <h1>LOGIN IS SUCCESSFUL</h1>

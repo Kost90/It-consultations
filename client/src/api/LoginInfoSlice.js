@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import {URL} from '../../config'
 
 export const FetchLoginUser = createAsyncThunk(
   "logininfo/FetchLoginUser",

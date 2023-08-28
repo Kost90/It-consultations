@@ -14,6 +14,6 @@ const ShowQuestionSlicer = createSlice({
   });
   
   
-  export const { ShowQ} = ShowQuestionSlicer.actions;
+  export const { ShowQ } = ShowQuestionSlicer.actions;
   
   export default ShowQuestionSlicer.reducer;

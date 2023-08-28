@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import {URL} from '../config'
+import { ShowQ } from "./ShowQuestionSlicer";
 
 const URL = process.env.REACT_APP_backendURL;
 
@@ -63,6 +63,7 @@ export const addQuestion = createAsyncThunk(
       const data = await response.json();
 
       dispatch(addQuestionState(data));
+      dispatch(ShowQ(true));
 
       return data;
     } catch (error) {
@@ -117,7 +118,7 @@ const questionsSlice = createSlice({
   },
 });
 
-export const { addQuestionState, getQuestions, logOutQuestions } =
+export const { addQuestionState, getQuestions, logOutQuestions, addShowquestion } =
   questionsSlice.actions;
 
 export default questionsSlice.reducer;

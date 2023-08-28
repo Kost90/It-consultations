@@ -33,8 +33,6 @@ export const AddAnswerForm = memo(({ to, from, id, Titel }) => {
         <label htmlFor="titel">Write answer:</label>
         <br />
         <textarea
-          // cols="30"
-          // rows="10"
           {...register("content", { required: true })}
         ></textarea>
       </div>

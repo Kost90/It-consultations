@@ -2,17 +2,15 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import UserInfoDisplay from "../components/Userinfo";
-import ProfilePageNavBar from '../components/PofilePageNavBar';
+import ProfilePageNavBar from "../components/PofilePageNavBar";
 import ProfilePageSideBar from "../components/ProfilePageSideBar";
 import { FetchLoginUser } from "../api/LoginInfoSlice";
-import LoginForm from "../components/LoginForm";
+import { Link } from "react-router-dom";
 import styles from "./styles/ProfilePage.module.css";
 
 function Profilepage() {
   const dispatch = useDispatch();
-  const { LoginUser, statuslogin, errorlogin } = useSelector(
-    (state) => state.logininfo
-  );
+  const { statuslogin, errorlogin } = useSelector((state) => state.logininfo);
   const { username } = useParams();
 
   useEffect(() => {
@@ -26,22 +24,29 @@ function Profilepage() {
   return (
     <>
       <div className={styles.flex_container}>
-        {statuslogin === "loading" && <h2>User information Loading...</h2>}
-        {errorlogin && <h2>Error: Server Users error</h2>}
-        {LoginUser.length !== 0 ? (
+        {errorlogin && (
           <>
-          <ProfilePageNavBar/>
-          <div className={styles.flex_container_row}>
-          <ProfilePageSideBar/>
-          <UserInfoDisplay />
-          </div>
-         
-          
-          
+            <h2>Error: Server Users error</h2>
+            <Link to="/" />
+          </>
+        )}
+        {statuslogin === "resolved" ? (
+          <>
+            <ProfilePageNavBar />
+            <div className={styles.flex_container_row}>
+              <ProfilePageSideBar />
+              <UserInfoDisplay />
+            </div>
           </>
         ) : (
           <>
-            <LoginForm />
+            {statuslogin === "loading" && <h1>User information Loading...</h1>}
+            {errorlogin && (
+              <>
+                <h2>Error: Server Users error</h2>
+                <Link to="/" />
+              </>
+            )}
           </>
         )}
       </div>

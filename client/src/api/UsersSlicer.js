@@ -1,9 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { AddLoginUserInfo } from "./LoginInfoSlice";
-// import {URL} from '../config'
-
-// const URL = process.env.REACT_APP_backendURL;
-
 
 
 export const FetchAllUsers = createAsyncThunk(

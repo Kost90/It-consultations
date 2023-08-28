@@ -9,6 +9,7 @@ function ViewQuestions({ user }) {
   const { question, statusQuestions, errorQuestions } = useSelector(
     (state) => state.questions
   );
+  const { showQuestion } = useSelector((state) => state.showQuestion);
 
   useEffect(() => {
     const FetchData = async (u) => {
@@ -21,11 +22,11 @@ function ViewQuestions({ user }) {
       }
     };
     FetchData(user);
-  }, [dispatch]);
+  }, [showQuestion]);
 
   return (
     <>
-      {statusQuestions === "loading" && <h2>Questions Loading...</h2>}
+      {statusQuestions === "loading" && <h1>Questions Loading...</h1>}
       {errorQuestions && <h2>Error: Server error</h2>}
       <div className={styles.flex_container_questions}>
         <h2>Users Questions:</h2>
