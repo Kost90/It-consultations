@@ -7,13 +7,15 @@ import { Tab, tabClasses } from '@mui/base/Tab';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faScaleBalanced, faLaptopFile, faVault } from "@fortawesome/free-solid-svg-icons";
 import LawServices from '../Services/LawServices';
+import ITServices from '../Services/ITServices';
+import FinanceServices from '../Services/FinanceServices';
 
 export default function ServicesTabs() {
   return (
     <Tabs defaultValue={1}>
       <StyledTabsList>
         <StyledTab value={1}>
-        <FontAwesomeIcon icon={faScaleBalanced} size='lg'/>
+        <FontAwesomeIcon icon={faScaleBalanced}/>
         </StyledTab>
         <StyledTab value={2}>
         <FontAwesomeIcon icon={faLaptopFile} />
@@ -25,15 +27,19 @@ export default function ServicesTabs() {
       <StyledTabPanel value={1}>
         <LawServices/>
       </StyledTabPanel>
-      <StyledTabPanel value={2}>Second page</StyledTabPanel>
-      <StyledTabPanel value={3}>Third page</StyledTabPanel>
+      <StyledTabPanel value={2}>
+        <ITServices/>
+      </StyledTabPanel>
+      <StyledTabPanel value={3}>
+        <FinanceServices/>
+      </StyledTabPanel>
     </Tabs>
   );
 }
 
 const StyledTab = styled(Tab)`
   font-family: 'IBM Plex Sans', sans-serif;
-  color: black;
+  color: #B3B3BA;
   cursor: pointer;
   font-size: 3.875rem;
   font-weight: bold;
@@ -41,14 +47,15 @@ const StyledTab = styled(Tab)`
   width: 100%;
   line-height: 4.5;
   padding: 8px 12px;
-  margin: 6px;
+  margin: 6px 0;
   border: none;
-  border-radius: 8px;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #B3B3BA;
 
   &.${tabClasses.selected} {
-    color: white;
+    color: #673AB7;
+    border-bottom: 1px solid #673AB7;
   }
 `;
 
@@ -61,14 +68,13 @@ const StyledTabPanel = styled(TabPanel)`
 const StyledTabsList = styled(TabsList)(
   ({ theme }) => `
   min-width: 400px;
-  margin-bottom: 60px;
-  margin-top: 60px;
+  margin-bottom: 40px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: space-between;
   padding: 80px;
-  background-image: linear-gradient(to right, #673AB7 0%, #512DA8 51%, #673AB7 100%);
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   `,

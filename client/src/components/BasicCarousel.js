@@ -12,14 +12,14 @@ export default function SimpleSlider() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2500,
   };
   return (
     <Slider {...settings}>
       <div>
         <img
-          style={{ height: "500px", width: "100%", maxWidth: "800px"}}
+          style={{ height: "500px", width: "700px", maxWidth: "800px"}}
           src={law}
           alt="First slide"
         />

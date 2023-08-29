@@ -24,7 +24,7 @@ const Home = () => {
         <h1>OUR SERVICES:</h1>
         <ServicesTabs/>
       </div>
-      {/* <BasicCarousel /> */}
+      <BasicCarousel />
     </div>
   );
 };
