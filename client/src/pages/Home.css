@@ -28,3 +28,13 @@ h3{
     height: 40px;
     background-color: #005792;
 }
+
+.homeContainer{
+    text-align: center;
+    margin-top: 26px;
+}
+
+.homeContainer h1{
+    font-size: 30px;
+    color: black;
+}

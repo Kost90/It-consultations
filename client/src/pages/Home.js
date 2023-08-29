@@ -3,6 +3,7 @@ import "./Home.css";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import BasicCarousel from "../components/BasicCarousel";
+import ServicesTabs from "../components/servicesTabs/ServicesTabs";
 
 const Home = () => {
   return (
@@ -20,9 +21,10 @@ const Home = () => {
         </h3>
       </div>
       <div className="homeContainer">
-        <div className="homeServices">Our services</div>
+        <h1>OUR SERVICES:</h1>
+        <ServicesTabs/>
       </div>
-      <BasicCarousel />
+      {/* <BasicCarousel /> */}
     </div>
   );
 };
