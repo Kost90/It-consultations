@@ -2,9 +2,10 @@ import { useForm } from "react-hook-form";
 import { memo } from "react";
 import { useDispatch } from "react-redux";
 import { AddNewUser } from "../api/UsersSlicer";
+import { AddLoginUserInfo } from "../api/LoginInfoSlice";
 import styles from './styles/RegisterForm.module.css'
 
-const RegisterForm = memo(({ show }) => {
+const RegisterForm = memo(() => {
   const dispatch = useDispatch();
 
   const {
@@ -25,8 +26,8 @@ const RegisterForm = memo(({ show }) => {
 
   const onSubmit = (data) => {
     dispatch(AddNewUser(data));
+    dispatch(AddLoginUserInfo(data));
     localStorage.setItem("username", JSON.stringify(data.username));
-    show();
     reset();
   };
 

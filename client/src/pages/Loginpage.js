@@ -18,7 +18,8 @@ function Loginpage() {
   useEffect(() => {
     const FetchData = async () => {
       const data = await JSON.parse(localStorage.getItem("username"));
-      if (data) {
+      console.log(data);
+      if (data !== null) {
       setUsername(data);
       const info = await dispatch(FetchLoginUser(data));
       return info

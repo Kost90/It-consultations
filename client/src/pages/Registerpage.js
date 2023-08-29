@@ -1,36 +1,45 @@
 import { useState, useEffect } from "react";
 import RegisterForm from "../components/RegisterForm";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FetchLoginUser } from "../api/LoginInfoSlice";
 import styles from './styles/RegisterPage.module.css'
 
 function Registerpage() {
   const [username, setUsername] = useState("");
-  const [show, setShow] = useState(false);
+  const {LoginUser, statuslogin, errorlogin } = useSelector((state) => state.logininfo);
+  const {users, status} = useSelector((state) => state.users);
   const dispatch = useDispatch();
 
-  const handelFunction = () => {
-    setShow(true);
-  };
+  useEffect(() =>{
+    const data = JSON.parse(localStorage.getItem("username"));
+    if(status === 'resolved'){
+      console.log(data)
+      setUsername(data);
+    }
+  }, [users])
+  
 
   useEffect(() => {
     const FetchData = async () => {
-      const data = await JSON.parse(localStorage.getItem("username"));
-      if (data) {
-        setUsername(data);
-        dispatch(FetchLoginUser(data));
+      console.log(LoginUser);
+      if (LoginUser.username === username) {
+        console.log('start')
+        const info = await dispatch(FetchLoginUser(username));
+        return info
       }
     };
     FetchData();
-  }, [show]);
+  }, [username]);
 
   return (
     <>
     <div className={styles.container}>
     <div className={styles.form_container}>
-    {show ? (
+    {statuslogin === "loading" && <h1>Loading...</h1>}
+    {statuslogin === 'resolved' ? (
         <>
+        {errorlogin && <h2>Error: Server error</h2>}
           <button type="button" className={styles.button_register_page}>
             <Link to={`/profilepage/${username}`}>GO TO YOUR PROFILE PAGE</Link>
           </button>
@@ -38,7 +47,7 @@ function Registerpage() {
       ) : (
         <>
         <h1 className={styles.h1}>CREATE YOUR ACCOUNT</h1>
-          <RegisterForm show={handelFunction} />
+          <RegisterForm />
         </>
       )}
     </div>

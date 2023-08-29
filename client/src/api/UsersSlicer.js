@@ -43,7 +43,7 @@ export const AddNewUser = createAsyncThunk(
       const data = await response.json();
 
       dispatch(addUser(data));
-      dispatch(AddLoginUserInfo(data));
+      // dispatch(AddLoginUserInfo(data));
 
       return await data;
     } catch (error) {

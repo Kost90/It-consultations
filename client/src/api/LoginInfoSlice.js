@@ -65,6 +65,7 @@ export const AddLoginUserInfo = createAsyncThunk(
       const data = await response.json();
 
       dispatch(addloginInfo(data));
+      // dispatch(FetchLoginUser(data));
 
       return data;
     } catch (error) {
