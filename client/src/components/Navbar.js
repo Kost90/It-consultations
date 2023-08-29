@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FetchLoginUser, DeleteLoginUser } from "../api/LoginInfoSlice";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
 import styles from "./styles/Navbar.module.css";
@@ -42,13 +41,12 @@ const Navbar = () => {
   console.log(user);
 
   return (
-    <div className="navbar">
-      <div className="navBarContainer">
-        {/* <span className="logo"> IT Consultancy</span> */}
-        <div className="logo">
-          <FontAwesomeIcon icon={faPeopleGroup} />
+    <div className={styles.navbar}>
+      <div className={styles.navBarContainer}>
+        <div className={styles.logo}>
+          <FontAwesomeIcon icon={faPeopleGroup}  className={styles.logo_nav_bar}/>
           <span>
-            <Link to="/" className="routerLink">
+            <Link to="/" className={styles.routerLink}>
               Triple Consult
             </Link>
           </span>

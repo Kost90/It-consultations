@@ -1,5 +1,5 @@
 .header{
-    background-color: #005792;
+    background-color: white;
     color: white;
     display: flex;
     justify-content: center;
@@ -22,7 +22,7 @@
 }
 
 .headerListItem.active{
-    border: 1px solid white;
+    border: 1px solid black;
     padding: 5px;
     border-radius: 5px;
 }
@@ -47,5 +47,9 @@
 
 .routerLink{
     text-decoration: none;
-    color: white;
+    color: black;
+}
+
+.icons_header{
+    color: black;
 }
