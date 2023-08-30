@@ -24,7 +24,7 @@ h1 {
   color: #6e6c6c;
 }
 
-.button_register_page {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,14 +43,14 @@ h1 {
   border-radius: 10px;
   background-image: linear-gradient(to right, #673ab7 0%, #512da8 51%, #673ab7 100%);
 }
-.button_register_page:hover {
+.button:hover {
   color: #673ab7;
   background-color: white;
   background-image: none;
   border: 1px solid #512da8;
   text-decoration: none;
 }
-.button_register_page:focus {
+.button:focus {
   outline: none;
 }
 
@@ -81,7 +81,7 @@ h1 {
     margin: 0;
     color: #6e6c6c;
   }
-  .button_register_page {
+  .button {
     margin: 10%;
     text-align: center;
     text-transform: uppercase;
@@ -100,11 +100,11 @@ h1 {
     background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
     box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
   }
-  .button_register_page:hover {
+  .button:hover {
     background-position: 100% 0;
     transition: all 0.4s ease-in-out;
   }
-  .button_register_page:focus {
+  .button:focus {
     outline: none;
   }
 }/*# sourceMappingURL=LoginPage.module.css.map */
