@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { GetUserInfo } from "../api/LoginInfoSlice";
 import styles from './styles/LoginFrom.module.css'
 
-function LoginForm({ show }) {
+function LoginForm({ username }) {
   const dispatch = useDispatch();
 
   const {
@@ -21,7 +21,7 @@ function LoginForm({ show }) {
   const onSubmit = (data) => {
     dispatch(GetUserInfo(data));
     localStorage.setItem("username", JSON.stringify(data.username));
-    show();
+    username(data.username);
     reset();
   };
 
