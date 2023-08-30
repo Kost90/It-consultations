@@ -25,7 +25,7 @@ const Home = () => {
         <h1>OUR SERVICES:</h1>
         <ServicesTabs />
       </div>
-      <BasicCarousel />
+      {/* <BasicCarousel /> */}
       <section className={styles.section_card_grid}>
         <h1>how we work:</h1>
         <div className={styles.home_container_secGrid}>
