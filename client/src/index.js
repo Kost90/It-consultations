@@ -10,9 +10,9 @@ import Experts from "./pages/Experts";
 import Registerpage from "./pages/Registerpage";
 import Profilepage from "./pages/Profilepage";
 import Loginpage from "./pages/Loginpage";
+import ContactUs from "./pages/contactus/ContactUs";
 import ITservices from './pages/ITservices';
-import LegalServices from './pages/LegalServices.js'
-import FinancialServices from './pages/FinancialServices';
+
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -31,8 +31,7 @@ const App = () => {
           <Route path="/profilepage/:username" element={<Profilepage />} />
           <Route path='itservices' element={<ITservices/>}/>
           <Route path="/loginpage" element={<Loginpage />} />
-          <Route path="/legalservices" element={<LegalServices/>} />
-          <Route path='financialservices' element={<FinancialServices/>}/>
+          <Route path="/contactus" element={<ContactUs/>}/>
         </Routes>
 
        

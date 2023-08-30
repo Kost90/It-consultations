@@ -4,6 +4,8 @@ import styles from './Services.module.css'
 
 function FinanceServices() {
   return (
+    <>
+    <h1>OUR IT FINANCE SERVICES:</h1>
     <div className={styles.conrainer_card}>
         <img src={finance} alt='photo'/>
         <div className={styles.border}></div>
@@ -14,6 +16,8 @@ function FinanceServices() {
             <li>Full buisness support</li>
         </ul>
     </div>
+    </>
+    
   )
 }
 

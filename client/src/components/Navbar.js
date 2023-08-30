@@ -75,6 +75,9 @@ const Navbar = () => {
             <button className={styles.button_navbar}>
               <Link to="/loginpage">Login</Link>
             </button>
+            <button type='button' className={styles.button_navbar}>
+            <Link to='/contactus'>Contact us</Link>
+            </button>
             </>
           )}
         </div>

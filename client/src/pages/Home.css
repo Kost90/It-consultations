@@ -10,7 +10,7 @@
         /* margin-top: 30px; */
         background: url("../assets/pexels-fauxels-3183183.jpg");
         background-size: cover;
-        height: 600px;
+        height: 900px;
     }
     
     .homeBody > h1{
@@ -36,8 +36,17 @@
     }
     
     .homeContainer h1{
-        font-size: 30px;
-        color: #B3B3BA;
+        color: #F0145A;
+        font-size: 42px;
+        line-height: 50px;
+        text-transform: uppercase;
+        padding-top: 30px;
+    }
+
+    .home_container_secGrid{
+        padding: 0 20px;
+        margin: 0 auto;
+        max-width: 1440px;
     }
 }
 

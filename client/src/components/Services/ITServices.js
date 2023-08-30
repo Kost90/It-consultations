@@ -4,7 +4,9 @@ import styles from './Services.module.css'
 
 function ITServices() {
   return (
-    <div className={styles.conrainer_card}>
+    <>
+    <h1>OUR IT SERVICES:</h1>
+     <div className={styles.conrainer_card}>
         <img src={it} alt='photo'/>
         <div className={styles.border}></div>
         <ul className={styles.ul_container}>
@@ -15,6 +17,8 @@ function ITServices() {
             <li>Full stack project</li>
         </ul>
     </div>
+    </>
+   
   )
 }
 

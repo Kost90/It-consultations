@@ -63,6 +63,8 @@ const StyledTabPanel = styled(TabPanel)`
   width: 100%;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 0.875rem;
+  background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+  padding-bottom: 100px;
 `;
 
 const StyledTabsList = styled(TabsList)(

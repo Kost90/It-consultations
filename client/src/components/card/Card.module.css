@@ -1,0 +1,43 @@
+@media (min-width: 768px) {
+  .card_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+    grid-gap: 80px;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 50px;
+    max-width: 1440px;
+  }
+  .card_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0px 0px 6px -3px rgb(84, 82, 82);
+  }
+  .card_container img {
+    width: calc(100% + 20px);
+    height: 300px;
+    margin: -20px;
+    margin-bottom: 10px;
+    border-radius: 8px 8px 0 0;
+  }
+  .card_container h4 {
+    color: #673AB7;
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .card_container:hover {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.6s;
+    transition-property: transform;
+    transform: scale(1.1);
+  }
+}/*# sourceMappingURL=Card.module.css.map */

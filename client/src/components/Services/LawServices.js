@@ -4,6 +4,8 @@ import styles from './Services.module.css'
 
 function LawServices() {
   return (
+    <>
+    <h1>OUR LEGAL SERVICES:</h1>
     <div className={styles.conrainer_card}>
         <img src={law} alt='photo'/>
         <div className={styles.border}></div>
@@ -16,6 +18,8 @@ function LawServices() {
             <li>Tax law</li>
         </ul>
     </div>
+    </>
+    
   )
 }
 

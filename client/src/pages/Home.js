@@ -4,6 +4,9 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import BasicCarousel from "../components/BasicCarousel";
 import ServicesTabs from "../components/servicesTabs/ServicesTabs";
+import Card from "../components/card/Card";
+import Footer from "../components/footer/Footer";
+import styles from "./styles/Home.module.css";
 
 const Home = () => {
   return (
@@ -22,9 +25,16 @@ const Home = () => {
       </div>
       <div className="homeContainer">
         <h1>OUR SERVICES:</h1>
-        <ServicesTabs/>
+        <ServicesTabs />
       </div>
       <BasicCarousel />
+      <section className={styles.section_card_grid}>
+        <h1>how we work:</h1>
+        <div className={styles.home_container_secGrid}>
+          <Card />
+        </div>
+      </section>
+      <Footer/>
     </div>
   );
 };
