@@ -12,7 +12,6 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Header />
       <div className="homeBody">
         <h1>Welcome to Triple Consult</h1>
         <h3>

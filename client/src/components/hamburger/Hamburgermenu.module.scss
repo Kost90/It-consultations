@@ -1,0 +1,32 @@
+.hamburger_menu{
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0px; */
+    gap: 2px;
+}
+
+.burger{
+    width: 2.5rem;
+    height: 0.3rem;
+    border-radius: 10px;
+    background-color: black;
+    transform-origin: 10px;
+    transition: all 0.5s linear;
+}
+
+.burger_1{
+    transform: rotate(45deg);
+    background-color:  rgb(232, 241, 241);
+}
+
+.burger_2{
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.burger_3{
+    transform: rotate(-45deg);
+    background-color:  rgb(232, 241, 241);
+}
