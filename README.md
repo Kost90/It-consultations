@@ -17,6 +17,7 @@ Sequelize (associations for models);
 Express.js;
 Hash password;
 JWT token;
+Back end side deployed on render.com
 
 
 You can register using register button and then have accesse to the profile page. In profilepage you can send questions to choosed consultant and take answers. All data save to the database PostgresSQL.
