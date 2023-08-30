@@ -32,6 +32,7 @@
     align-items: center;
     justify-content: space-around;
     border-radius: 10px;
+    flex-direction: row;
     margin: 60px;
     padding: 20px;
   }
@@ -48,10 +49,12 @@
     line-height: 80px;
     font-weight: bold;
     list-style: disc;
+    color: white;
   }
   .border {
+    display: flex;
     width: 5px;
-    background-color: rgba(103, 58, 183, 0.6784313725);
+    background-color: white;
     height: 460px;
     border-radius: 10px;
   }

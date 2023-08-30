@@ -56,6 +56,7 @@ font-family: 'IBM Plex Sans', sans-serif;
   &.${tabClasses.selected} {
     color: #673AB7;
     border-bottom: 1px solid #673AB7;
+  }
 
 @media(min-width:768px){
   font-family: 'IBM Plex Sans', sans-serif;
@@ -92,7 +93,7 @@ const StyledTabPanel = styled(TabPanel)`
   width: 100%;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 0.875rem;
-  background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+  background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
   padding-bottom: 100px;
   }
 `;

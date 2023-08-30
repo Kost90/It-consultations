@@ -1,12 +1,11 @@
 .container {
   margin: 0 auto;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 35px;
-  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgb(102, 116, 236) 0%, rgb(50, 231, 219) 90%);
+  background-image: linear-gradient(111.4deg, rgb(7, 7, 9) 6.5%, rgb(27, 24, 113) 93.2%);
 }
 
 .form_container {
@@ -14,12 +13,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 35px;
+  gap: 20px;
   background-color: white;
-  height: 750px;
-  width: 700px;
   border-radius: 10px;
-  margin: 0 40px;
+  margin: 20px auto;
 }
 
 h1 {
@@ -28,28 +25,86 @@ h1 {
 }
 
 .button_register_page {
-  margin: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
   text-align: center;
   text-transform: uppercase;
-  width: 200px;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 12px;
   color: #fff;
   cursor: pointer;
-  margin: 20px;
-  height: 55px;
+  height: 25px;
   text-align: center;
   border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  transition: all 0.4s ease-in-out;
-  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  transition: 0.7s;
+  background-size: 200% auto;
+  border-radius: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #673ab7 0%, #512da8 51%, #673ab7 100%);
 }
 .button_register_page:hover {
-  background-position: 100% 0;
-  transition: all 0.4s ease-in-out;
+  color: #673ab7;
+  background-color: white;
+  background-image: none;
+  border: 1px solid #512da8;
+  text-decoration: none;
 }
 .button_register_page:focus {
   outline: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    background-image: linear-gradient(111.4deg, rgb(7, 7, 9) 6.5%, rgb(27, 24, 113) 93.2%);
+  }
+  .form_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    background-color: white;
+    height: 750px;
+    width: 700px;
+    border-radius: 10px;
+    margin: 40px auto;
+  }
+  h1 {
+    margin: 0;
+    color: #6e6c6c;
+  }
+  .button_register_page {
+    margin: 10%;
+    text-align: center;
+    text-transform: uppercase;
+    width: 200px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    transition: all 0.4s ease-in-out;
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  }
+  .button_register_page:hover {
+    background-position: 100% 0;
+    transition: all 0.4s ease-in-out;
+  }
+  .button_register_page:focus {
+    outline: none;
+  }
 }/*# sourceMappingURL=RegisterPage.module.css.map */

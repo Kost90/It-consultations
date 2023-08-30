@@ -32,6 +32,7 @@
         align-items: center;
         justify-content: space-around;
         border-radius: 10px;
+        flex-direction: row;
         margin: 60px;
         padding: 20px;
         img {
@@ -49,11 +50,13 @@
         line-height: 80px;
         font-weight: bold;
         list-style: disc;
+        color: white;
     }
 
     .border {
+        display: flex;
         width: 5px;
-        background-color: #673ab7ad;
+        background-color: white;
         height: 460px;
         border-radius: 10px;
     }

@@ -11,7 +11,6 @@ import styles from "./styles/Home.module.css";
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <div className="homeBody">
         <h1>Welcome to Triple Consult</h1>
         <h3>
@@ -33,7 +32,6 @@ const Home = () => {
           <Card />
         </div>
       </section>
-      <Footer/>
     </div>
   );
 };
