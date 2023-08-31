@@ -1,0 +1,19 @@
+.servTile{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: lightgray;
+    color: black;
+}
+
+.servTile > img{
+    width: 50%;
+}
+
+p{
+    margin: 20px 50px;
+}
+
+/* button{
+    margin-left: 50px;
+} */
