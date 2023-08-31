@@ -18,7 +18,7 @@ const ContactUsMessages = sequelize.define('contactus', {
         allowNull: false,
       },
     phone: {
-        type: DataTypes.NUMBER(255),
+        type: DataTypes.STRING(255),
         allowNull: false,
     },
     comment: {
