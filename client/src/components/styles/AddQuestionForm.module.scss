@@ -1,25 +1,21 @@
 .flex_container_addquestions {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 10px;
-    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-    padding: 50px;
-    margin: 15px;
-    border-radius: 15px;
-    -webkit-box-shadow: -2px 13px 88px -14px rgba(84,79,84,0.83);
-    -moz-box-shadow: -2px 13px 88px -14px rgba(84,79,84,0.83);
-    box-shadow: -2px 13px 88px -14px rgba(84,79,84,0.83);
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid #673ab7ad;
+    margin-bottom: 20px;
     input {
         display: flex;
         padding: 5px;
         border: 2px solid #ccc;
         border-radius: 10px;
-        width: 300px;
         cursor: pointer;
         &::placeholder {
-            font-size: 18px;
+            font-size: 14px;
         }
         &:focus {
             border: 1px solid #4481eb;
@@ -32,37 +28,34 @@
         border: 2px solid #ccc;
         border-radius: 10px;
         padding: 5px;
+        font-size: 14px;
     }
     button {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 15px;
-        margin: 10%;
+        padding: 10px 20px;
         text-align: center;
         text-transform: uppercase;
-        width: 100px;
-        font-size: 14px;
-        font-weight: 600;
+        font-size: 12px;
         color: #fff;
         cursor: pointer;
-        margin: 20px;
         height: 25px;
         text-align: center;
         border: none;
-        background-size: 300% 100%;
-
-        border-radius: 50px;
-        -o-transition: all 0.4s ease-in-out;
-        -webkit-transition: all 0.4s ease-in-out;
-        transition: all 0.4s ease-in-out;
-        background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-        box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+        transition: 0.7s;
+        background-size: 200% auto;
+        border-radius: 10px;
+    
+        border-radius: 10px;
+        background-image: linear-gradient(to right, #673ab7 0%, #512da8 51%, #673ab7 100%);
+    
         &:hover {
-            background-position: 100% 0;
-            -o-transition: all 0.4s ease-in-out;
-            -webkit-transition: all 0.4s ease-in-out;
-            transition: all 0.4s ease-in-out;
+            color: #673ab7;
+            background-color: white;
+            background-image: none;
+            border: 1px solid #512da8;
+            text-decoration: none;
         }
         &:focus {
             outline: none;
@@ -70,8 +63,6 @@
     }
     textarea {
         display: flex;
-        height: 150px;
-        width: 325px;
         border: 2px solid #ccc;
         box-sizing: border-box;
         border-radius: 4px;
@@ -80,4 +71,91 @@
         padding: 12px 20px;
         resize: none;
     }
+}
+
+@media(min-width:768px){
+    .flex_container_addquestions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        gap: 10px;
+        background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+        padding: 50px;
+        margin: 15px;
+        border-radius: 15px;
+        -webkit-box-shadow: -2px 13px 88px -14px rgba(84,79,84,0.83);
+        -moz-box-shadow: -2px 13px 88px -14px rgba(84,79,84,0.83);
+        box-shadow: -2px 13px 88px -14px rgba(84,79,84,0.83);
+        input {
+            display: flex;
+            padding: 5px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            width: 300px;
+            cursor: pointer;
+            &::placeholder {
+                font-size: 18px;
+            }
+            &:focus {
+                border: 1px solid #4481eb;
+                &::placeholder {
+                    color: #4481eb;
+                }
+            }
+        }
+        select{
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            margin: 10%;
+            text-align: center;
+            text-transform: uppercase;
+            width: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            margin: 20px;
+            height: 25px;
+            text-align: center;
+            border: none;
+            background-size: 300% 100%;
+    
+            border-radius: 50px;
+            -o-transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+            &:hover {
+                background-position: 100% 0;
+                -o-transition: all 0.4s ease-in-out;
+                -webkit-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        textarea {
+            display: flex;
+            height: 150px;
+            width: 325px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 14px;
+            padding: 12px 20px;
+            resize: none;
+        }
+    }
+    
 }

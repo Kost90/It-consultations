@@ -23,6 +23,7 @@ export const AddQuestionForm = memo(({ id, from }) => {
   });
 
   const onSubmit = (data) => {
+    console.log(data);
     dispatch(addQuestion(data));
     reset();
   };

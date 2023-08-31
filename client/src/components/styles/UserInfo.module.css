@@ -1,10 +1,10 @@
 .flex_container_userinfo {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  min-height: 350px;
   gap: 15px;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 .button_logout {

@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { ShowQ } from "./ShowQuestionSlicer";
 
-const URL = process.env.REACT_APP_backendURL;
-
 export const FetchStaffQuestions = createAsyncThunk(
   "questions/FetchQuestion",
   async function (username, { rejectWithValue, dispatch }) {
