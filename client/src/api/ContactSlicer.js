@@ -38,7 +38,7 @@ export const addContactUsMessage = createAsyncThunk(
 
       const data = await response.json();
 
-      dispatch(addQuestionState(data));
+      dispatch(addContactUsState(data));
 
       return data;
     } catch (error) {
