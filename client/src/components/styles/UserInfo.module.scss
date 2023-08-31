@@ -1,9 +1,10 @@
 .flex_container_userinfo{
     display:flex;
     justify-content: center;
-    align-items: flex-start;
-    height: 100%;
-    gap: 30px;
+    align-items: center;
+    min-height: 350px;
+    gap: 15px;
+    flex-direction: column;
 }
 
 .button_logout {
@@ -68,5 +69,80 @@
     padding: 10px;
     li{
         font-size: 18px;
+    }
+}
+
+@media(min-width:768px){
+    .flex_container_userinfo{
+        display:flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+        gap: 30px;
+    }
+    
+    .button_logout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        margin: 10%;
+        text-align: center;
+        text-transform: uppercase;
+        width: 100px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        margin: 20px;
+        height: 25px;
+        text-align: center;
+        border: none;
+        background-size: 300% 100%;
+    
+        border-radius: 50px;
+        -o-transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+        box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+        &:hover {
+            background-position: 100% 0;
+            -o-transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    .flex_container_username{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+        padding: 50px;
+        margin: 15px;
+        border-radius: 15px;
+        h2{
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+    }
+    
+    .flex_container_ul{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        border: 3px solid rgb(63, 63, 65);
+        border-radius: 10px;
+        padding: 10px;
+        li{
+            font-size: 18px;
+        }
     }
 }

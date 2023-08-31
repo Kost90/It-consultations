@@ -52,6 +52,7 @@ function ProfilePageSideBar() {
         <li>Email: {user.email}</li>
         <li>User name: {user.username}</li>
       </ul>
+      <div className={styles.buttons_container}>
       <button type="button" onClick={HandelClickQuestion}>
         Questions
       </button>
@@ -63,6 +64,7 @@ function ProfilePageSideBar() {
           Add question
         </button>
       ) : null}
+      </div>
     </div>
   );
 }

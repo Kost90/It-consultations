@@ -3,43 +3,39 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  background-color: #00204a;
-  height: 100vh;
-  width: 300px;
+  gap: 10px;
+  margin-top: 35px;
   border-radius: 10px;
 }
 .flex_container_buttons_sidebar h2 {
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
-  color: #dfe9f3;
 }
 .flex_container_buttons_sidebar button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  margin: 10%;
+  padding: 10px 20px;
   text-align: center;
   text-transform: uppercase;
-  width: 100px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 10px;
   color: #fff;
   cursor: pointer;
-  margin: 20px;
   height: 25px;
   text-align: center;
   border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  transition: all 0.4s ease-in-out;
-  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  transition: 0.7s;
+  background-size: 200% auto;
+  border-radius: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #673ab7 0%, #512da8 51%, #673ab7 100%);
 }
 .flex_container_buttons_sidebar button:hover {
-  background-position: 100% 0;
-  transition: all 0.4s ease-in-out;
+  color: #673ab7;
+  background-color: white;
+  background-image: none;
+  border: 1px solid #512da8;
+  text-decoration: none;
 }
 .flex_container_buttons_sidebar button:focus {
   outline: none;
@@ -49,12 +45,19 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 15px;
-  border: 3px solid white;
-  border-radius: 10px;
+  gap: 5px;
+  border-bottom: 3px solid rgba(103, 58, 183, 0.6784313725);
+  border-top: 3px solid rgba(103, 58, 183, 0.6784313725);
   padding: 10px;
+  margin: 20px auto;
 }
 .flex_container_ul li {
-  font-size: 18px;
-  color: #dfe9f3;
+  font-size: 14px;
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }/*# sourceMappingURL=ProfilePageSideBar.module.css.map */

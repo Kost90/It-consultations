@@ -1,23 +1,21 @@
 .flex_container{
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    // background-image: radial-gradient(
-    //     circle farthest-corner at 10% 20%,
-    //     rgba(102, 116, 236, 1) 0%,
-    //     rgba(50, 231, 219, 1) 90%
-    // );
-    // padding-top: 30px;
-    // height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
     background-color: white;
+    min-height: 350px;
 }
 
 .flex_container_row{
-    display:flex;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 200px;
-    height: 100%;
+    min-height: 350px;
+}
+
+
+@media(min-width:768px){
+
 }
