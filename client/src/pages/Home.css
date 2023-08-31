@@ -50,10 +50,10 @@ h3{
 
 @media (min-width:768px){
     h3{
-        margin-left: 50px;
         width: 800px;
         color: whitesmoke;
         opacity: 0.75;
+        text-align: unset;
     }
     
     .homeBody{
@@ -64,10 +64,10 @@ h3{
     }
     
     .homeBody > h1{
-        margin-left: 50px;
         font-size: 30pt;
         padding-top: 15%;
         color: white;
+        text-align: unset;
     }
     
     .homeServices{
