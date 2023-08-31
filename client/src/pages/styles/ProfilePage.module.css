@@ -13,4 +13,19 @@
   justify-content: center;
   align-items: center;
   min-height: 350px;
+}
+
+@media (min-width: 768px) {
+  .flex_container {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .flex_container_row {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 20px;
+    gap: 100px;
+  }
 }/*# sourceMappingURL=ProfilePage.module.css.map */

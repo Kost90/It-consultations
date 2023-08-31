@@ -34,14 +34,12 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 10px;
-    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-    padding: 50px;
+    padding: 30px;
     margin: 15px;
-    border-radius: 15px;
-    box-shadow: -2px 13px 88px -14px rgba(84, 79, 84, 0.83);
+    border-radius: 10px;
   }
   .flex_container_questions h2 {
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
   }
   .flex_container_ul {
@@ -50,10 +48,8 @@
     align-items: flex-start;
     gap: 10px;
     margin-bottom: 15px;
-    border: 3px solid rgb(63, 63, 65);
-    border-radius: 10px;
+    border-top: 3px solid rgba(175, 170, 184, 0.8274509804);
     padding: 10px;
-    width: 350px;
   }
   .flex_container_ul li {
     font-size: 18px;
