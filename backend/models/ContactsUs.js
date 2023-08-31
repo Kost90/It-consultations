@@ -1,7 +1,7 @@
 const {DataTypes} = require('sequelize');
 const {sequelize} = require('./conn');
 
-const ContactUsMessages = sequelize.define('questions', {
+const ContactUsMessages = sequelize.define('contactus', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
