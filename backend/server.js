@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const {testConnection} = require('./models/conn');
 const dotenv = require('dotenv');
-// const {createTables} = require('./models/setUp')
+const {createTables} = require('./models/setUp')
 
 // const mongoose = require('mongoose');
 
@@ -30,7 +30,7 @@ dotenv.config();
 
 app.use(cors());
 app.use(express.json());
-// createTables()
+createTables()
 
 app.use("/users", userRoutes);
 app.use("/loginuser", loginUserRoutes);
