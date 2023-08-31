@@ -16,12 +16,14 @@
     margin-top: 50px;
     width: 100%;
     border-radius: 10px;
+    transform: translate3d(0 0 0 0);
   }
   .slick-track {
     position: relative;
     top: 0;
     left: 0;
     display: flex;
+    /* transform: translate3d(0px, 0px, 0px) !important; */
   }
   .slick-slide div {
     display: flex !important;
@@ -93,13 +95,13 @@
 @media(min-width:768px){
   .slick-slider {
     position: relative;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 20px;
     border-radius: 10px;
     margin: 0 100px;
+    margin-bottom: 40px;
   }
   .slick-list {
     position: relative;
@@ -122,7 +124,6 @@
   }
   .slick-slide .image {
     object-fit: cover;
-    border-radius: 2px;
     min-width: 150px !important;
     width: 80%;
   }
@@ -160,7 +161,7 @@
   }
   .slick-prev,
   .slick-next {
-    display: none !important;
+    display: block !important;
     right: 2%;
   }
 

@@ -1,0 +1,128 @@
+.expert_page_container {
+    display: flex;
+    flex-direction: column;
+    h1 {
+        text-transform: uppercase;
+        margin: 0 auto;
+        color: black;
+        margin-bottom: 30px;
+        font-size: 20px;
+    }
+}
+
+.container_Firstexpert_text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #F5F5FA;
+    gap: 20px;
+    img{
+        max-width: 360px;
+        max-height: 520px;
+    }
+}
+
+.container_Secondexpert_text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding: 20px;
+    gap: 20px;
+    img{
+        max-width: 360px;
+        max-height: 520px;
+    }
+}
+
+.container_Thirdexpert_text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #F5F5FA;
+    gap: 20px;
+    img{
+        max-width: 360px;
+        max-height: 520px;
+    }
+}
+
+.text_container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    h2 {
+        font-size: 18px;
+        color: #f0145a;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media(min-width:768px){
+    .expert_page_container {
+        display: flex;
+        flex-direction: column;
+        h1 {
+            text-transform: uppercase;
+            margin: 0 auto;
+            color: black;
+            margin-bottom: 60px;
+        }
+    }
+    
+    .container_Firstexpert_text {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        padding: 20px;
+        background-color: #F5F5FA;
+    }
+    
+    .container_Secondexpert_text {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        padding: 20px;
+    }
+    
+    .container_Thirdexpert_text {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        padding: 20px;
+        background-color: #F5F5FA;
+        padding-bottom: 60px;
+    }
+    
+    .text_container {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        h2 {
+            font-size: 26px;
+            color: #f0145a;
+        }
+        p {
+            font-size: 18px;
+            line-height: 40px;
+        }
+    }
+    
+}

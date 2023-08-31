@@ -1,15 +1,15 @@
 import "slick-carousel/slick/slick-theme.css";
 import "./BasicCarousel.css";
 import Slider from "react-slick";
-import tripple from "../assets/tripple.jpg";
-import law from "../assets/law.jpg";
-import it from "../assets/it.jpg";
+import expertFirst from '../assets/experts/Photo-member2.png'
+import expertSecond from '../assets/experts/Photo-member3.png'
+import expertThird from '../assets/experts/Photo-member4.png'
 
 export default function SimpleSlider() {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
@@ -18,17 +18,13 @@ export default function SimpleSlider() {
   return (
     <Slider {...settings}>
       <div>
-        <img
-          style={{ height: "500px", width: "700px", maxWidth: "800px"}}
-          src={law}
-          alt="First slide"
-        />
+        <img src={expertFirst} alt="First slide"/>
       </div>
       <div>
-        <img style={{ height: "500px", width: "100%", maxWidth: "800px"}} src={it} alt="Second slide" />
+        <img  src={expertSecond} alt="Second slide" />
       </div>
       <div>
-        <img style={{ height: "500px", width: "100%", maxWidth: "800px"}} src={tripple} alt="Third slide" />
+        <img src={expertThird} alt="Third slide" />
       </div>
     </Slider>
   );

@@ -79,14 +79,14 @@ const Navbar = () => {
               </span>
             </li>
 
-            <li>
+            {/* <li>
               <FontAwesomeIcon icon={faBusinessTime} className={styles.icons_header} />
               <span>
                 <Link to="/services" className={styles.routerLink}>
                   Our Services
                 </Link>
               </span>
-            </li>
+            </li> */}
             {user !== undefined ? (
               <>
                 <button className={styles.button_navbar}>
