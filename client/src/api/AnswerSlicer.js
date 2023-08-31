@@ -25,7 +25,7 @@ export const FetchStaffAnswers = createAsyncThunk(
   async function (answerfrom, { rejectWithValue, dispatch }) {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_backendURL}/answers/${answerfrom}`
+        `${process.env.REACT_APP_backendURL}/answers/staff/${answerfrom}`
       );
 
       if (!response.ok) {
