@@ -10,7 +10,7 @@ const userRoutes = require("./Routes/UserRoutes");
 const questionsRoutes = require("./Routes/QuestionsRoutes");
 const loginUserRoutes = require("./Routes/LoginUserRoutes");
 const answersRoutes = require("./Routes/AnswersRoutes");;
-// const servicesRoutes = require('./Routes/servicesRoutes');
+const contactUsRoutes = require('./Routes/ContactUsRoutes')
 
 const app = express();
 const port = 8000;
@@ -36,7 +36,7 @@ app.use("/users", userRoutes);
 app.use("/loginuser", loginUserRoutes);
 app.use("/questions", questionsRoutes);
 app.use("/answers", answersRoutes);
-// app.use("/services", servicesRoutes);
+app.use("/contactus", contactUsRoutes);
 
 app.use((err, req, res, next)=>{
   const errorStatus = err.status || 500;

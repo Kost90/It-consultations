@@ -5,7 +5,8 @@ import questionsReducer from '../api/QuestionsSlicer';
 import answersReducer from './AnswerSlicer';
 import ShowQuestionReducer from './ShowQuestionSlicer';
 import ShowAnswersReducer from './ShowAnswersSlicer';
-import ShowAddQuestionsReducer from './ShowAddQuestionSlicer'
+import ShowAddQuestionsReducer from './ShowAddQuestionSlicer';
+import contactUsReducer from './ContactSlicer';
 
 export const Store = configureStore({
     reducer:{
@@ -16,5 +17,6 @@ export const Store = configureStore({
         showQuestion: ShowQuestionReducer,
         showAns: ShowAnswersReducer,
         showAddQuestions: ShowAddQuestionsReducer,
+        contactus: contactUsReducer,
     }
 })

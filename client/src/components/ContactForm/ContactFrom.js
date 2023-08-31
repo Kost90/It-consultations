@@ -1,8 +1,12 @@
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { addContactUsMessage } from "../../api/ContactSlicer";
 import styles from "./ContactForm.module.css";
 import { memo } from "react";
 
 const FormContact = memo(() => {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -19,6 +23,7 @@ const FormContact = memo(() => {
 
   const onSubmit = (data) => {
     console.log(data);
+    dispatch(addContactUsMessage(data));
     reset();
   };
 
