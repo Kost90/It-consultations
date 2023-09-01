@@ -11,8 +11,6 @@ export const FetchUserAnswers = createAsyncThunk(
       }
       const data = await response.json();
 
-      dispatch(addAnswersState(data));
-
       return await data;
     } catch (error) {
       return rejectWithValue(error.message);

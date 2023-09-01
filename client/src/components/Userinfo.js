@@ -3,10 +3,10 @@ import ViewQuestions from "../components/ViewQuestions";
 import { AddQuestionForm } from "./AddQuestionForm";
 import ViewAnswers from "./ViewAnswers";
 import styles from "./styles/UserInfo.module.css";
-
+import ViewContactUsInfo from "./ContactusView/ContactUsView";
 let user = {};
 
-const UserInfoDisplay = () => {
+const UserInfoDisplay = ({ contactUs }) => {
   const { LoginUser } = useSelector((state) => state.logininfo);
   const { showQuestion } = useSelector((state) => state.showQuestion);
   const { showAnswers } = useSelector((state) => state.showAns);
@@ -32,6 +32,7 @@ const UserInfoDisplay = () => {
         <>
           {showQuestion !== false ? <ViewQuestions user={user} /> : null}
           {showAnswers !== false ? <ViewAnswers username={user} /> : null}
+          {contactUs !== false ? <ViewContactUsInfo /> : null}
         </>
       )}
     </div>

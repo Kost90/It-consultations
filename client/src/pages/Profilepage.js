@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import UserInfoDisplay from "../components/Userinfo";
 import ProfilePageSideBar from "../components/ProfilePageSideBar";
@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import styles from "./styles/ProfilePage.module.css";
 
 function Profilepage() {
+  const [contacus,setContactUs] = useState(false);
   const dispatch = useDispatch();
   const { statuslogin, errorlogin } = useSelector((state) => state.logininfo);
   const { username } = useParams();
@@ -19,6 +20,11 @@ function Profilepage() {
     };
     FetchData();
   }, [dispatch]);
+
+  const HandelToggel = () => {
+    setContactUs((state) => !state);
+  }
+
 
   return (
     <>
@@ -32,8 +38,8 @@ function Profilepage() {
         {statuslogin === "resolved" ? (
           <>
             <div className={styles.flex_container_row}>
-              <ProfilePageSideBar />
-              <UserInfoDisplay />
+              <ProfilePageSideBar setContactUs={HandelToggel} contactUs={contacus} />
+              <UserInfoDisplay contactUs={contacus}/>
             </div>
           </>
         ) : (

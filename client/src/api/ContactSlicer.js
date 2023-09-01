@@ -56,10 +56,10 @@ const contactUsSlice = createSlice({
     },
     reducers: {
       addContactUsState: (state, action) => {
-        state.question.push(action.payload);
+        state.contactUsMessages.push(action.payload);
       },
       deleteContactUs: (state, action) => {
-        state.question = action.payload;
+        state.contactUsMessages = action.payload;
       },
     },
     extraReducers: {

@@ -51,21 +51,21 @@ export const AddLoginUserInfo = createAsyncThunk(
   "logininfo/AddLoginUserInfo",
   async function (user, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`${process.env.REACT_APP_backendURL}/loginuser`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_backendURL}/loginuser`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
       if (!response.ok) {
         throw new Error("Cant delete");
       }
 
       const data = await response.json();
-
-      dispatch(addloginInfo(data));
-      // dispatch(FetchLoginUser(data));
 
       return data;
     } catch (error) {
@@ -78,9 +78,12 @@ export const DeleteLoginUser = createAsyncThunk(
   "logininfo/DeleteLoginUser",
   async function (id, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`${process.env.REACT_APP_backendURL}/loginuser/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_backendURL}/loginuser/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Cant delete");

@@ -6,7 +6,7 @@ import styles from "./styles/ProfilePAgeSideBar.module.css";
 
 let user = {};
 
-function ProfilePageSideBar() {
+function ProfilePageSideBar({ setContactUs, contactUs }) {
   const dispatch = useDispatch();
   const { LoginUser } = useSelector((state) => state.logininfo);
   const { showQuestion } = useSelector((state) => state.showQuestion);
@@ -43,6 +43,10 @@ function ProfilePageSideBar() {
     }
   };
 
+  const HandelClickShowContactUs = () => {
+    setContactUs();
+  };
+
   return (
     <div className={styles.flex_container_buttons_sidebar}>
       <h2>Login User information:</h2>
@@ -53,17 +57,21 @@ function ProfilePageSideBar() {
         <li>User name: {user.username}</li>
       </ul>
       <div className={styles.buttons_container}>
-      <button type="button" onClick={HandelClickQuestion}>
-        Questions
-      </button>
-      <button type="button" onClick={HandelClickAnswers}>
-        Answers
-      </button>
-      {user.role === "user" ? (
-        <button type="button" onClick={HandelClickAddQuestion}>
-          Add question
+        <button type="button" onClick={HandelClickQuestion}>
+          Questions
         </button>
-      ) : null}
+        <button type="button" onClick={HandelClickAnswers}>
+          Answers
+        </button>
+        {user.role === "user" ? (
+          <button type="button" onClick={HandelClickAddQuestion}>
+            Add question
+          </button>
+        ) : (
+          <button type="button" onClick={HandelClickShowContactUs}>
+            Contact us info
+          </button>
+        )}
       </div>
     </div>
   );
