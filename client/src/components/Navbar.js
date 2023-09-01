@@ -62,7 +62,7 @@ const Navbar = () => {
             <li>
               <FontAwesomeIcon icon={faHouse} className={styles.icons_header} />
               <span>
-                <Link to="/" className={styles.routerLink}>
+                <Link to="/" className={styles.routerLink} onClick={toggleHamburger}>
                   Home
                 </Link>
               </span>
@@ -71,7 +71,7 @@ const Navbar = () => {
             <li>
               <FontAwesomeIcon icon={faUserTie} className={styles.icons_header} />
               <span>
-                <Link to="/experts" className={styles.routerLink}>
+                <Link to="/experts" className={styles.routerLink} onClick={toggleHamburger}>
                   Our Experts
                 </Link>
               </span>
@@ -80,7 +80,7 @@ const Navbar = () => {
             {user !== undefined ? (
               <>
                 <button className={styles.button_navbar}>
-                  <Link to={`/profilepage/${user.username}`}>Profile</Link>
+                  <Link to={`/profilepage/${user.username}`} onClick={toggleHamburger}>Profile</Link>
                 </button>
                 <button
                   type="button"
@@ -89,19 +89,19 @@ const Navbar = () => {
                   }}
                   className={styles.button_navbar}
                 >
-                  <Link to="/">Logout</Link>
+                  <Link to="/" onClick={toggleHamburger}>Logout</Link>
                 </button>
               </>
             ) : (
               <>
                 <button className={styles.button_navbar}>
-                  <Link to="/register">Register</Link>
+                  <Link to="/register" onClick={toggleHamburger}>Register</Link>
                 </button>
                 <button className={styles.button_navbar}>
-                  <Link to="/loginpage">Login</Link>
+                  <Link to="/loginpage" onClick={toggleHamburger}>Login</Link>
                 </button>
                 <button type="button" className={styles.button_navbar}>
-                  <Link to="/contactus">Contact us</Link>
+                  <Link to="/contactus" onClick={toggleHamburger}>Contact us</Link>
                 </button>
               </>
             )}
