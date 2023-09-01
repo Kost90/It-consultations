@@ -1,12 +1,12 @@
 h3{
     text-align: center;
-    color: whitesmoke;
+    color: black;
     opacity: 0.75;
     font-size: 16px;
 }
 
 .homeBody{
-    background: url("../assets/pexels-fauxels-3183183.jpg");
+    background: url("../assets/10837496_19449741.jpg");
     background-size: cover;
     width: 100%;
     padding: 30px;
@@ -15,7 +15,7 @@ h3{
 .homeBody > h1{
     text-align: center;
     font-size: 30px;
-    color: white;
+    color: black;
     padding-bottom: 30px;
 }
 
@@ -35,7 +35,7 @@ h3{
 }
 
 .homeContainer h1{
-    color: #F0145A;
+    color: rgba(103, 58, 183, 0.6784313725);
     font-size: 26px;
     line-height: 15px;
     text-transform: uppercase;
@@ -51,22 +51,23 @@ h3{
 @media (min-width:768px){
     h3{
         width: 800px;
-        color: whitesmoke;
+        color: black;
         opacity: 0.75;
         text-align: unset;
+        line-height: 40px;
     }
     
     .homeBody{
         /* margin-top: 30px; */
-        background: url("../assets/pexels-fauxels-3183183.jpg");
+        background: url("../assets/10837496_19449741.jpg");
         background-size: cover;
-        height: 900px;
+        min-height: 700px;
     }
     
     .homeBody > h1{
         font-size: 30pt;
-        padding-top: 15%;
-        color: white;
+        padding-top: 10%;
+        color: black;
         text-align: unset;
     }
     
@@ -86,7 +87,7 @@ h3{
     }
     
     .homeContainer h1{
-        color: #F0145A;
+        color: rgba(103, 58, 183, 0.6784313725);
         font-size: 42px;
         line-height: 50px;
         text-transform: uppercase;
