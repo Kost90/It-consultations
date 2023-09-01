@@ -47,13 +47,16 @@ export const addQuestion = createAsyncThunk(
   "questions/addQuestion",
   async function (question, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`${process.env.REACT_APP_backendURL}/questions`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(question),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_backendURL}/questions`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(question),
+        }
+      );
       if (!response.ok) {
         throw new Error("Cant delete");
       }
@@ -140,7 +143,11 @@ const questionsSlice = createSlice({
   },
 });
 
-export const { addQuestionState, getQuestions, deleteQuestion, addShowquestion } =
-  questionsSlice.actions;
+export const {
+  addQuestionState,
+  getQuestions,
+  deleteQuestion,
+  addShowquestion,
+} = questionsSlice.actions;
 
 export default questionsSlice.reducer;

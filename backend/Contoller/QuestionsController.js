@@ -41,7 +41,7 @@ const deleteQuestion = async (req, res) => {
     await Questions.destroy({ where: { id: id } });
     return res.json(result);
   }
-  return res.send("Message not found");
+  return res.send("Question not found");
 };
 
 module.exports = {

@@ -2,7 +2,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { AddAnswerForm } from "./AddAnswerFrom";
 import { useEffect } from "react";
 import styles from "./styles/ViewQuestions.module.css";
-import { FetchUserQuestion, FetchStaffQuestions, DeleteQuestion } from "../api/QuestionsSlicer";
+import {
+  FetchUserQuestion,
+  FetchStaffQuestions,
+  DeleteQuestion,
+} from "../api/QuestionsSlicer";
 
 function ViewQuestions({ user }) {
   const dispatch = useDispatch();
@@ -42,25 +46,39 @@ function ViewQuestions({ user }) {
                   <li>From: {element.from} </li>
                   <li>To: {element.to}</li>
                   <li>Content: {element.content}</li>
-                  <button type="button" onClick={() => {HandelClick(element.id)}}>delete question</button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      HandelClick(element.id);
+                    }}
+                  >
+                    delete question
+                  </button>
                 </ul>
               </>
             ))
           : question.map((element) => (
               <>
-              <ul key={element.id} className={styles.flex_container_ul}>
-              <li>Titel: {element.titel}</li>
-                <li>From: {element.from} </li>
-                <li>To: {element.to}</li>
-                <li>Content: {element.content}</li>
-                <button type="button" onClick={() => {HandelClick(element.id)}}>delete question</button>
-                <AddAnswerForm
-                  id={element.id}
-                  to={element.from}
-                  Titel={element.titel}
-                  from={user.username}
-                />
-              </ul>
+                <ul key={element.id} className={styles.flex_container_ul}>
+                  <li>Titel: {element.titel}</li>
+                  <li>From: {element.from} </li>
+                  <li>To: {element.to}</li>
+                  <li>Content: {element.content}</li>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      HandelClick(element.id);
+                    }}
+                  >
+                    delete question
+                  </button>
+                  <AddAnswerForm
+                    id={element.id}
+                    to={element.from}
+                    Titel={element.titel}
+                    from={user.username}
+                  />
+                </ul>
               </>
             ))}
       </div>
