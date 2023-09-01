@@ -44,7 +44,7 @@ export const FetchUserQuestion = createAsyncThunk(
 );
 
 export const addQuestion = createAsyncThunk(
-  "users/addQuestion",
+  "questions/addQuestion",
   async function (question, { rejectWithValue, dispatch }) {
     try {
       const response = await fetch(`${process.env.REACT_APP_backendURL}/questions`, {
@@ -70,6 +70,28 @@ export const addQuestion = createAsyncThunk(
   }
 );
 
+export const DeleteQuestion = createAsyncThunk(
+  "questions/DeleteQuestion",
+  async function (id, { rejectWithValue, dispatch }) {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_backendURL}/questions/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Cant delete");
+      }
+
+      dispatch(deleteQuestion(id));
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const questionsSlice = createSlice({
   name: "questions",
   initialState: {
@@ -84,8 +106,10 @@ const questionsSlice = createSlice({
     addQuestionState: (state, action) => {
       state.question.push(action.payload);
     },
-    logOutQuestions: (state, action) => {
-      state.question = action.payload;
+    deleteQuestion: (state, action) => {
+      state.question = state.question.filter(
+        (question) => question.id !== action.payload
+      );
     },
   },
   extraReducers: {
@@ -116,7 +140,7 @@ const questionsSlice = createSlice({
   },
 });
 
-export const { addQuestionState, getQuestions, logOutQuestions, addShowquestion } =
+export const { addQuestionState, getQuestions, deleteQuestion, addShowquestion } =
   questionsSlice.actions;
 
 export default questionsSlice.reducer;

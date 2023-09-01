@@ -8,6 +8,7 @@ router.get('/', questionsController.getAllQuestions);
 router.get('/:username', questionsController.getUserQuestions);
 router.get('/staff/:staffname', questionsController.getStaffQuestions);
 router.post('/', questionsController.addNewQuestion);
+router.delete('/:id', questionsController.deleteQuestion);
 
 module.exports = router;
 

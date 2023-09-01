@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { AddAnswerForm } from "./AddAnswerFrom";
 import { useEffect } from "react";
 import styles from "./styles/ViewQuestions.module.css";
-import { FetchUserQuestion, FetchStaffQuestions } from "../api/QuestionsSlicer";
+import { FetchUserQuestion, FetchStaffQuestions, DeleteQuestion } from "../api/QuestionsSlicer";
 
 function ViewQuestions({ user }) {
   const dispatch = useDispatch();
@@ -24,6 +24,10 @@ function ViewQuestions({ user }) {
     FetchData(user);
   }, [showQuestion]);
 
+  const HandelClick = (id) => {
+    dispatch(DeleteQuestion(id));
+  };
+
   return (
     <>
       {statusQuestions === "loading" && <h1>Questions Loading...</h1>}
@@ -38,6 +42,7 @@ function ViewQuestions({ user }) {
                   <li>From: {element.from} </li>
                   <li>To: {element.to}</li>
                   <li>Content: {element.content}</li>
+                  <button type="button" onClick={() => {HandelClick(element.id)}}>delete question</button>
                 </ul>
               </>
             ))
@@ -48,6 +53,7 @@ function ViewQuestions({ user }) {
                 <li>From: {element.from} </li>
                 <li>To: {element.to}</li>
                 <li>Content: {element.content}</li>
+                <button type="button" onClick={() => {HandelClick(element.id)}}>delete question</button>
                 <AddAnswerForm
                   id={element.id}
                   to={element.from}

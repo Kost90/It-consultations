@@ -34,9 +34,20 @@ const addNewQuestion = async (req, res) => {
   return res.json(result);
 };
 
+const deleteQuestion = async (req, res) => {
+  let id = req.params.id;
+  const result = await Questions.findAll({ where: { id: id } });
+  if (result != null) {
+    await Questions.destroy({ where: { id: id } });
+    return res.json(result);
+  }
+  return res.send("Message not found");
+};
+
 module.exports = {
   getAllQuestions,
   getUserQuestions,
   addNewQuestion,
   getStaffQuestions,
+  deleteQuestion,
 };
