@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const FetchContactUsMessages = createAsyncThunk(
-  "questions/FetchContactUsMessage",
+  "contactus/FetchContactUsMessage",
   async function (_, { rejectWithValue, dispatch }) {
     try {
       const response = await fetch(
@@ -22,7 +22,7 @@ export const FetchContactUsMessages = createAsyncThunk(
 );
 
 export const addContactUsMessage = createAsyncThunk(
-  "users/addContactUsMessage",
+  "contactus/addContactUsMessage",
   async function (question, { rejectWithValue, dispatch }) {
     try {
       const response = await fetch(`${process.env.REACT_APP_backendURL}/contactus`, {
@@ -47,6 +47,28 @@ export const addContactUsMessage = createAsyncThunk(
   }
 );
 
+export const DeleteContactMessage = createAsyncThunk(
+  "contactus/DeleteContactMessage",
+  async function (id, { rejectWithValue, dispatch }) {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_backendURL}/contactus/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Cant delete");
+      }
+
+      dispatch(deleteContactMessage(id));
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const contactUsSlice = createSlice({
     name: "contactus",
     initialState: {
@@ -58,8 +80,10 @@ const contactUsSlice = createSlice({
       addContactUsState: (state, action) => {
         state.contactUsMessages.push(action.payload);
       },
-      deleteContactUs: (state, action) => {
-        state.contactUsMessages = action.payload;
+      deleteContactMessage: (state, action) => {
+        state.contactUsMessages = state.contactUsMessages.filter(
+          (message) => message.id !== action.payload
+        );
       },
     },
     extraReducers: {
@@ -78,7 +102,7 @@ const contactUsSlice = createSlice({
     },
   });
   
-  export const { addContactUsState, deleteContactUs } =
+  export const { addContactUsState, deleteContactMessage } =
   contactUsSlice.actions;
   
   export default contactUsSlice.reducer;

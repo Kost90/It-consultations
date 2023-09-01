@@ -47,8 +47,6 @@ const Navbar = () => {
     window.location.reload();
   };
 
-  console.log(user);
-
   return (
     <header>
           <div className={isOpen ? styles.logo_show : styles.logo_show_black}>
@@ -79,14 +77,6 @@ const Navbar = () => {
               </span>
             </li>
 
-            {/* <li>
-              <FontAwesomeIcon icon={faBusinessTime} className={styles.icons_header} />
-              <span>
-                <Link to="/services" className={styles.routerLink}>
-                  Our Services
-                </Link>
-              </span>
-            </li> */}
             {user !== undefined ? (
               <>
                 <button className={styles.button_navbar}>

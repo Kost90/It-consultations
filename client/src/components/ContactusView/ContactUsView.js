@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { FetchContactUsMessages } from "../../api/ContactSlicer";
+import { FetchContactUsMessages, DeleteContactMessage } from "../../api/ContactSlicer";
 import styles from './ContactUsView.module.css';
 
 
@@ -18,7 +18,9 @@ function ViewContactUsInfo() {
     FetchData();
   }, [dispatch]);
 
-  console.log(contactUsMessages);
+  const HandelClick = (id) => {
+    dispatch(DeleteContactMessage(id));
+  };
 
   return (
     <>
@@ -32,6 +34,7 @@ function ViewContactUsInfo() {
           <li>Costumer email: {element.email}</li>
           <li>phone: {element.phone}</li>
           <li>comment: {element.comment}</li>
+          <button type="button" onClick={() => {HandelClick(element.id)}}>delete</button>
         </ul>
         </>
       ))}

@@ -18,7 +18,18 @@ const getContactsUsMessages = async (req, res) => {
     return res.json(result);
   };
 
+  const deleteContactUsMessage = async (req, res) => {
+    let id = req.params.id;
+    const result = await ContactUsMessages.findAll({ where: { id: id } });
+    if (result != null) {
+      await ContactUsMessages.destroy({ where: { id: id } });
+      return res.json(result);
+    }
+    return res.send("Message not found");
+  };
+
   module.exports = {
     getContactsUsMessages,
-    addContactUsMessage
+    addContactUsMessage,
+    deleteContactUsMessage,
 }
