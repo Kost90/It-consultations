@@ -20,7 +20,7 @@ function ITServices() {
     transition={{
       duration: 2,
       delay: 0.5,
-    }}>OUR IT SERVICES:</motion.h1>
+    }}>IT SERVICES:</motion.h1>
      <motion.div initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{

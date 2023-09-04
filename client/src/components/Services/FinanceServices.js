@@ -23,7 +23,7 @@ function FinanceServices() {
           delay: 0.5,
         }}
       >
-        OUR FINANCE SERVICES:
+        FINANCE SERVICES:
       </motion.h1>
       <motion.div
         initial={{ opacity: 0 }}

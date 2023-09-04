@@ -101,27 +101,21 @@ const StyledTabPanel = styled(TabPanel)`
 const StyledTabsList = styled(TabsList)(
   ({ theme }) => `
   min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: space-between;
+  padding: 20px;
+  
+  @media(min-width:768px){
+  min-width: 400px;
   margin-bottom: 20px;
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: space-between;
   padding: 40px;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-
-  @media(min-width:768px){
-  min-width: 400px;
-  margin-bottom: 40px;
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: space-between;
-  padding: 80px;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
   }
   `,
 );

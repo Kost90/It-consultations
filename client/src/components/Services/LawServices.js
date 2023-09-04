@@ -24,7 +24,7 @@ function LawServices() {
           delay: 0.5,
         }}
       >
-        OUR LEGAL SERVICES:
+        LEGAL SERVICES:
       </motion.h1>
       <motion.div
         initial={{ opacity: 0 }}
