@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { ShowQ } from "./ShowQuestionSlicer";
+
 
 export const FetchStaffQuestions = createAsyncThunk(
   "questions/FetchQuestion",
@@ -64,7 +64,6 @@ export const addQuestion = createAsyncThunk(
       const data = await response.json();
 
       dispatch(addQuestionState(data));
-      dispatch(ShowQ(true));
 
       return data;
     } catch (error) {

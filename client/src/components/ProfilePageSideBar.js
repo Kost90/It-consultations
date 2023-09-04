@@ -1,17 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
-import { ShowQ } from "../api/ShowQuestionSlicer";
-import { ShowA } from "../api/ShowAnswersSlicer";
-import { ShowAddQ } from "../api/ShowAddQuestionSlicer";
+import { useSelector} from "react-redux";
 import styles from "./styles/ProfilePAgeSideBar.module.css";
 
 let user = {};
 
-function ProfilePageSideBar({ setContactUs, contactUs }) {
-  const dispatch = useDispatch();
+function ProfilePageSideBar({ setContactUs, setShowQuestions, setShowAnswers, setShowAddQuestion }) {
   const { LoginUser } = useSelector((state) => state.logininfo);
-  const { showQuestion } = useSelector((state) => state.showQuestion);
-  const { showAnswers } = useSelector((state) => state.showAns);
-  const { showAddQuestion } = useSelector((state) => state.showAddQuestions);
 
   if (Array.isArray(LoginUser)) {
     user = LoginUser[0];
@@ -20,27 +13,15 @@ function ProfilePageSideBar({ setContactUs, contactUs }) {
   }
 
   const HandelClickQuestion = () => {
-    if (showQuestion === false) {
-      dispatch(ShowQ(true));
-    } else {
-      dispatch(ShowQ(false));
-    }
+    setShowQuestions();
   };
 
   const HandelClickAnswers = () => {
-    if (showAnswers === false) {
-      dispatch(ShowA(true));
-    } else {
-      dispatch(ShowA(false));
-    }
+    setShowAnswers();
   };
 
   const HandelClickAddQuestion = () => {
-    if (showAddQuestion === false) {
-      dispatch(ShowAddQ(true));
-    } else {
-      dispatch(ShowAddQ(false));
-    }
+    setShowAddQuestion();
   };
 
   const HandelClickShowContactUs = () => {

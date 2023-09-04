@@ -14,8 +14,7 @@ function ViewQuestions({ user }) {
   const { question, statusQuestions, errorQuestions } = useSelector(
     (state) => state.questions
   );
-  const { showQuestion } = useSelector((state) => state.showQuestion);
-
+ 
   useEffect(() => {
     const FetchData = async (u) => {
       if (u.role === "user") {
@@ -27,7 +26,7 @@ function ViewQuestions({ user }) {
       }
     };
     FetchData(user);
-  }, [showQuestion]);
+  }, [dispatch]);
 
   const HandelClick = (id) => {
     dispatch(DeleteQuestion(id));

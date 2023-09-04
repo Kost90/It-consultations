@@ -6,11 +6,8 @@ import styles from "./styles/UserInfo.module.css";
 import ViewContactUsInfo from "./ContactusView/ContactUsView";
 let user = {};
 
-const UserInfoDisplay = ({ contactUs }) => {
+const UserInfoDisplay = ({ contactUs, showQuestion, showAnswers, showAddQuestion }) => {
   const { LoginUser } = useSelector((state) => state.logininfo);
-  const { showQuestion } = useSelector((state) => state.showQuestion);
-  const { showAnswers } = useSelector((state) => state.showAns);
-  const { showAddQuestion } = useSelector((state) => state.showAddQuestions);
 
   if (Array.isArray(LoginUser)) {
     user = LoginUser[0];
