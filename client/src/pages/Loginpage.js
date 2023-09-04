@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import LoginForm from "../components/LoginForm";
 import { FetchLoginUser } from "../api/LoginInfoSlice";
+import Footer from '../components/footer/Footer';
 import Loader from "../components/Loader/Loader";
 import styles from "./styles/LoginPage.module.css";
 
@@ -53,6 +54,7 @@ function Loginpage() {
           )}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

@@ -3,6 +3,7 @@ import RegisterForm from "../components/RegisterForm";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchLoginUser } from "../api/LoginInfoSlice";
+import Footer from '../components/footer/Footer';
 import Loader from "../components/Loader/Loader";
 import styles from './styles/RegisterPage.module.css'
 
@@ -53,7 +54,7 @@ function Registerpage() {
       )}
     </div>
     </div>
-    
+    <Footer/>
     </>
   );
 }

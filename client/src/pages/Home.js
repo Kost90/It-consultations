@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "./Home.css";
 import ServicesTabs from "../components/servicesTabs/ServicesTabs";
 import Card from "../components/card/Card";
+import Footer from "../components/footer/Footer";
 import styles from "./styles/Home.module.css";
 
 const Home = () => {
@@ -76,6 +77,7 @@ const textVariants = {
           <Card />
         </motion.div>
       </section>
+    <Footer/>
     </div>
   );
 };

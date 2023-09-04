@@ -2,6 +2,7 @@ import {motion} from 'framer-motion'
 import expertFirst from "../assets/experts/Photo-member2.png";
 import expertSecond from "../assets/experts/Photo-member3.png";
 import expertThird from "../assets/experts/Photo-member4.png";
+import Footer from '../components/footer/Footer';
 import styles from "./Experts/Experts.module.css";
 
 const Experts = () => {
@@ -74,6 +75,7 @@ const Experts = () => {
             </p>
           </div>
         </motion.div>
+        <Footer/>
       </div>
     </>
   );
