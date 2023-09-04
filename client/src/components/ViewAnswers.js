@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FetchUserAnswers } from "../api/AnswerSlicer";
 import { FetchStaffAnswers } from "../api/AnswerSlicer";
+import Loader from '../components/Loader/Loader';
 import styles from "./styles/ViewAnswers.module.css";
 
 function ViewAnswers({ username }) {
@@ -25,7 +26,7 @@ function ViewAnswers({ username }) {
 
   return (
     <>
-      {statusAnswers === "loading" && <h1>Answers Loading...</h1>}
+      {statusAnswers === "loading" && <Loader/>}
       <div className={styles.flex_container_answers}>
         <h2>Answers:</h2>
         {answers.map((element) => (

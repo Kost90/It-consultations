@@ -42,7 +42,7 @@ const RegisterForm = memo(() => {
           <div style={{ color: "red" }}>Enter your Lastname</div>
         )}
         <input type="email" {...register("email", { required: true })} placeholder="Enter your email"/>
-        {errors.name && <div style={{ color: "red" }}>Enter your email</div>}
+        {errors.email && <div style={{ color: "red" }}>Enter your email</div>}
         <input type="password" {...register("password", { required: true })} placeholder="Enter your password" />
         {errors.password && (
           <div style={{ color: "red" }}>Enter your password</div>

@@ -31,15 +31,6 @@
   font-size: 24px;
   line-height: 36px;
 }
-.card_container:hover {
-  display: inline-block;
-  vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  transition-duration: 0.6s;
-  transition-property: transform;
-  transform: scale(1.1);
-}
 
 @media (min-width: 768px) {
   .card_grid {
@@ -73,14 +64,5 @@
     color: #673AB7;
     font-size: 24px;
     line-height: 36px;
-  }
-  .card_container:hover {
-    display: inline-block;
-    vertical-align: middle;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    transition-duration: 0.6s;
-    transition-property: transform;
-    transform: scale(1.1);
   }
 }/*# sourceMappingURL=Card.module.css.map */

@@ -1,15 +1,33 @@
-import React from "react";
+import {motion} from 'framer-motion'
 import expertFirst from "../assets/experts/Photo-member2.png";
 import expertSecond from "../assets/experts/Photo-member3.png";
 import expertThird from "../assets/experts/Photo-member4.png";
 import styles from "./Experts/Experts.module.css";
 
 const Experts = () => {
+
+  const cardAnimation = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition:{duration: 0.3},
+    }
+  }
+
   return (
     <>
       <div className={styles.expert_page_container}>
         <h1>Our Experts:</h1>
-        <div className={styles.container_Firstexpert_text}>
+        <motion.div 
+        initial='hidden'
+        whileInView='visible'
+        viewport={{amount: 0.2, once: true}}
+        variants={cardAnimation}
+        className={styles.container_Firstexpert_text}>
           <img src={expertFirst} alt="Expert" />
           <div className={styles.text_container}>
             <h2>Konstantyn</h2>
@@ -19,9 +37,16 @@ const Experts = () => {
               multi site.
             </p>
           </div>
-        </div>
+        </motion.div>
         <div className={styles.container_Secondexpert_text}>
-          <div className={styles.text_container}>
+          <motion.div 
+          initial={{x: 100,
+            opacity: 0,}}
+          whileInView={{x: 0,
+            opacity: 1,
+            transition:{duration: 0.3}}}
+          viewport={{amount: 0.2, once: true}}
+          className={styles.text_container}>
             <h2>Manuel</h2>
             <p>
               Professional, is a technical person who maintains, monitors and
@@ -29,10 +54,15 @@ const Experts = () => {
               analysis, security and information assurance, IT audits, web and
               database administration.
             </p>
-          </div>
+          </motion.div>
           <img src={expertSecond} alt="Expert" />
         </div>
-        <div className={styles.container_Thirdexpert_text}>
+        <motion.div 
+        initial='hidden'
+        whileInView='visible'
+        viewport={{amount: 0.2, once: true}}
+        variants={cardAnimation}
+        className={styles.container_Thirdexpert_text}>
           <img src={expertThird} alt="Expert" />
           <div className={styles.text_container}>
             <h2>Prince</h2>
@@ -43,7 +73,7 @@ const Experts = () => {
               decisions.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );

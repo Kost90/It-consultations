@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import LoginForm from "../components/LoginForm";
 import { FetchLoginUser } from "../api/LoginInfoSlice";
+import Loader from "../components/Loader/Loader";
 import styles from "./styles/LoginPage.module.css";
 
 function Loginpage() {
@@ -34,7 +35,7 @@ function Loginpage() {
       <div className={styles.container}>
         <div className={styles.form_container}>
           <h1>SIGN IN</h1>
-          {statuslogin === "loading" && <h1>Loading...</h1>}
+          {statuslogin === "loading" && <Loader/>}
           {statuslogin === "resolved" ? (
             <>
               {errorlogin && <h2>Error: Server error</h2>}

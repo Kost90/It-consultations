@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FetchContactUsMessages, DeleteContactMessage } from "../../api/ContactSlicer";
+import Loader from '../Loader/Loader';
 import styles from './ContactUsView.module.css';
 
 
@@ -24,7 +25,7 @@ function ViewContactUsInfo() {
 
   return (
     <>
-      {statusContactUs === "loading" && <h1>Contact messages Loading...</h1>}
+      {statusContactUs === "loading" && <Loader/>}
       <div className={styles.flex_container_answers}>
       <h2>Contact us messages:</h2>
       {contactUsMessages.map((element) => (

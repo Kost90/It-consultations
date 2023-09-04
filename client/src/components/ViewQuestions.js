@@ -7,6 +7,7 @@ import {
   FetchStaffQuestions,
   DeleteQuestion,
 } from "../api/QuestionsSlicer";
+import Loader from '../components/Loader/Loader';
 
 function ViewQuestions({ user }) {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ function ViewQuestions({ user }) {
 
   return (
     <>
-      {statusQuestions === "loading" && <h1>Questions Loading...</h1>}
+      {statusQuestions === "loading" && <Loader/>}
       {errorQuestions && <h2>Error: Server error</h2>}
       <div className={styles.flex_container_questions}>
         <h2>Users Questions:</h2>

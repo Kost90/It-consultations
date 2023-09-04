@@ -5,6 +5,7 @@ import UserInfoDisplay from "../components/Userinfo";
 import ProfilePageSideBar from "../components/ProfilePageSideBar";
 import { FetchLoginUser } from "../api/LoginInfoSlice";
 import { Link } from "react-router-dom";
+import Loader from '../components/Loader/Loader'
 import styles from "./styles/ProfilePage.module.css";
 
 function Profilepage() {
@@ -44,7 +45,7 @@ function Profilepage() {
           </>
         ) : (
           <>
-            {statuslogin === "loading" && <h1>User information Loading...</h1>}
+            {statuslogin === "loading" && <Loader/>}
             {errorlogin && (
               <>
                 <h2>Error: Server Users error</h2>

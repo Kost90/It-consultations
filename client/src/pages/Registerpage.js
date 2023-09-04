@@ -3,6 +3,7 @@ import RegisterForm from "../components/RegisterForm";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchLoginUser } from "../api/LoginInfoSlice";
+import Loader from "../components/Loader/Loader";
 import styles from './styles/RegisterPage.module.css'
 
 function Registerpage() {
@@ -36,7 +37,7 @@ function Registerpage() {
     <>
     <div className={styles.container}>
     <div className={styles.form_container}>
-    {statuslogin === "loading" && <h1>Loading...</h1>}
+    {statuslogin === "loading" && <Loader/>}
     {statuslogin === 'resolved' ? (
         <>
         {errorlogin && <h2>Error: Server error</h2>}
