@@ -18,6 +18,7 @@ function LawServices() {
     <>
       <motion.h1
         initial={{ opacity: 0 }}
+        whileInView='visible'
         animate={{ opacity: 1 }}
         transition={{
           duration: 2,

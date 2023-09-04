@@ -1,25 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
-import Navbar from "../components/Navbar";
-import Header from "../components/Header";
-import BasicCarousel from "../components/BasicCarousel";
 import ServicesTabs from "../components/servicesTabs/ServicesTabs";
 import Card from "../components/card/Card";
-import Footer from "../components/footer/Footer";
 import styles from "./styles/Home.module.css";
 
 const Home = () => {
-const h3Variants = {
+const textVariants = {
   hidden: {
     x: -100,
     opacity: 0,
   },
-  vsisible: {
+  vsisible: custom => ({
     x: 0,
     opacity: 1,
     ease: "easeOut",
-  }
+    transition: {duration: custom * 0.3, delay: custom * 0.5}
+  }),
 };
 
   return (
@@ -28,29 +25,24 @@ const h3Variants = {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          duration: 2,
+          duration: 1.5,
           delay: 0.5,
         }}
         className="homeBody"
       >
         <motion.h1
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, ease: "easeOut", x: 0 }}
-          transition={{
-          duration: 2,
-          delay: 0.8,
-          }}
+          initial={'hidden'}
+          animate={'vsisible'}
+          custom={1}
+          variants={textVariants}
         >
           Welcome to Triple Consult
         </motion.h1>
         <motion.h3
           initial={'hidden'}
           animate={'vsisible'}
-          transition={{
-          duration: 2,
-          delay: 1.2,
-          }}
-          variants={h3Variants}
+          custom={2}
+          variants={textVariants}
         >
           Usabiltiy thinking outside the box. Through the lens of i also believe
           it's important for every member to be involved and invested in our
@@ -63,12 +55,26 @@ const h3Variants = {
         <h1>OUR SERVICES:</h1>
         <ServicesTabs />
       </div>
-      {/* <BasicCarousel /> */}
       <section className={styles.section_card_grid}>
-        <h1>how we work:</h1>
-        <div className={styles.home_container_secGrid}>
+        <motion.h1
+        initial= {{
+          y: -100,
+          opacity: 0,
+        }}
+        transition={{
+          duration: 0.3,
+        }}
+        whileInView={
+          {y: 0,
+          opacity: 1,
+        }}
+        viewport={{amount: 0.2, once: true}}
+        >how we work:</motion.h1>
+        <motion.div
+        viewport={{amount: 0.2, once: true}}
+         className={styles.home_container_secGrid}>
           <Card />
-        </div>
+        </motion.div>
       </section>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import { motion } from "framer-motion";
 import styles from "./Card.module.css";
 import codeimage from "../../assets/luca-bravo-XJXWbfSo2f0-unsplash.jpg";
 import bookimg from "../../assets/dariusz-sankowski-ABAmxzlot8E-unsplash.jpg";
@@ -37,14 +37,31 @@ function Card() {
     },
   ];
 
+  const cardAnimation = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition:{duration: 0.3},
+    }
+  }
+
   return (
     <div className={styles.card_grid}>
       {data.map((Element) => (
-        <div className={styles.card_container} key={Element.id}>
+        <motion.div
+        initial='hidden'
+        whileInView='visible'
+        viewport={{amount: 0.2, once: true}}
+        variants={cardAnimation}
+        className={styles.card_container} key={Element.id}>
           <img src={Element.img} />
           <h4>{Element.titel}</h4>
           <p>{Element.description}</p>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
