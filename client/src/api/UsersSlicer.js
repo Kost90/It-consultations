@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import { AddLoginUserInfo } from "./LoginInfoSlice";
-
+import { AddLoginUserInfo } from "./LoginInfoSlice";
 
 export const FetchAllUsers = createAsyncThunk(
   "users/FetchUser",
@@ -29,21 +28,23 @@ export const AddNewUser = createAsyncThunk(
   "users/AddNewUser",
   async function (user, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`${process.env.REACT_APP_backendURL}/users`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_backendURL}/users`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
       if (!response.ok) {
         throw new Error("Cant delete");
       }
 
       const data = await response.json();
 
-      dispatch(addUser(data));
-      // dispatch(AddLoginUserInfo(data));
+      await dispatch(AddLoginUserInfo(data));
 
       return await data;
     } catch (error) {
@@ -74,7 +75,7 @@ const usersSlice = createSlice({
     },
     [AddNewUser.fulfilled]: (state, action) => {
       state.status = "resolved";
-      state.users = action.payload;
+      state.users.push(action.payload);
     },
     [AddNewUser.rejected]: (state, action) => {
       state.status = "rejected";

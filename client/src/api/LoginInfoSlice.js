@@ -66,6 +66,7 @@ export const AddLoginUserInfo = createAsyncThunk(
       }
 
       const data = await response.json();
+      dispatch(addloginInfo(data));
 
       return data;
     } catch (error) {
@@ -105,7 +106,7 @@ const loginSlice = createSlice({
   },
   reducers: {
     addloginInfo: (state, action) => {
-      state.LoginUser = action.payload;
+      state.LoginUser.push(action.payload);
     },
     removeLoginUser: (state, action) => {
       state.LoginUser = state.LoginUser.filter(
