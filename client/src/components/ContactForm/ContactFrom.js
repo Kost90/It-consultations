@@ -4,8 +4,12 @@ import { addContactUsMessage } from "../../api/ContactSlicer";
 import styles from "./ContactForm.module.css";
 import { memo } from "react";
 
-const FormContact = memo(() => {
+const FormContact = memo(({setvisibility}) => {
   const dispatch = useDispatch();
+
+  const handelVisibility = () =>{
+    setvisibility();
+  };
 
   const {
     register,
@@ -24,6 +28,7 @@ const FormContact = memo(() => {
   const onSubmit = (data) => {
     console.log(data);
     dispatch(addContactUsMessage(data));
+    handelVisibility();
     reset();
   };
 
