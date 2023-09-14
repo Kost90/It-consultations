@@ -1,8 +1,19 @@
 import { useForm } from "react-hook-form";
-import { memo } from "react";
+import { memo,useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { addQuestion } from "../api/QuestionsSlicer";
 import styles from "./styles/AddQuestionForm.module.css";
+
+import { string, object, number } from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const addQuestionSchema = {
+  titel: string().trim().required().min(3).max(20).label("Titel"),
+  content: string().trim().required().min(3).label("Your message"),
+  to: string().trim().required().label("Name hos you write"),
+  from: string().trim().required().label("Your name"),
+  UsersID: number().label("Users ID"),
+};
 
 export const AddQuestionForm = memo(({ id, from }) => {
   const dispatch = useDispatch();
@@ -13,20 +24,20 @@ export const AddQuestionForm = memo(({ id, from }) => {
     reset,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      titel: "",
-      content: "",
-      to: "",
-      from: from,
-      UsersID: id,
-    },
+    resolver: yupResolver(object().shape(addQuestionSchema)),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    dispatch(addQuestion(data));
+  const onSubmit = useCallback((data) => {
+    const newData = {
+      ...data,
+      titel: Titel,
+      to: to,
+      from: from,
+      UsersID: id,
+    };
+    dispatch(addQuestion(newData));
     reset();
-  };
+  },[]);
 
   return (
     <form

@@ -13,7 +13,6 @@ import Loginpage from "./pages/Loginpage";
 import ContactUsPage from "./pages/contactus/ContactUsPage";
 import ITservices from './pages/ITservices';
 import Navbar from './components/Navbar';
-import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -30,7 +29,6 @@ function App() {
           <Route path="/loginpage" element={<Loginpage />} />
           <Route path="/contactus" element={<ContactUsPage/>}/>
         </Routes>
-        {/* <Footer/> */}
       </Provider>
    </>
   );

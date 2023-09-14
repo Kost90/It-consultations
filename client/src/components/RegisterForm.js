@@ -1,8 +1,23 @@
 import { useForm } from "react-hook-form";
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { AddNewUser } from "../api/UsersSlicer";
-import styles from './styles/RegisterForm.module.css'
+import styles from './styles/RegisterForm.module.css';
+
+import { string, object } from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const registerSchema = {
+  Firstname: string().trim().required().min(3).max(20).label("Your Firstname"),
+  Lastname: string().trim().required().min(3).max(20).label("Your Lastname"),
+  email: string()
+    .email()
+    .required()
+    .matches(/@[^.]*\./),
+  password: string().trim().required().label("password"),
+  username: string().trim().required().min(3).max(20).label("Your username"),
+  role: string().trim().required().min(3).max(20).label("Your role"),
+};
 
 const RegisterForm = memo(() => {
   const dispatch = useDispatch();
@@ -13,21 +28,18 @@ const RegisterForm = memo(() => {
     reset,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      Firstname: "",
-      Lastname: "",
-      password: "",
-      email: "",
-      username: "",
-      role: "user",
-    },
+    resolver: yupResolver(object().shape(registerSchema)),
   });
 
-  const onSubmit = (data) => {
-    dispatch(AddNewUser(data));
-    localStorage.setItem("username", JSON.stringify(data.username));
+  const onSubmit = useCallback((data) => {
+    const newData = {
+      ...data,
+      role: 'user',
+    };
+    dispatch(AddNewUser(newData));
+    localStorage.setItem("username", JSON.stringify(newData.username));
     reset();
-  };
+  },[]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>

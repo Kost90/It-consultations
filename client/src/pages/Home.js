@@ -1,24 +1,28 @@
-import React from "react";
+import { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
+import Loader from "../components/Loader/Loader";
 import "./Home.css";
-import ServicesTabs from "../components/servicesTabs/ServicesTabs";
-import Card from "../components/card/Card";
 import Footer from "../components/footer/Footer";
 import styles from "./styles/Home.module.css";
 
+const ServicesTabs = lazy(() =>
+  import("../components/servicesTabs/ServicesTabs")
+);
+const Card = lazy(() => import("../components/card/Card"));
+
 const Home = () => {
-const textVariants = {
-  hidden: {
-    x: -100,
-    opacity: 0,
-  },
-  vsisible: custom => ({
-    x: 0,
-    opacity: 1,
-    ease: "easeOut",
-    transition: {duration: custom * 0.3, delay: custom * 0.5}
-  }),
-};
+  const textVariants = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    vsisible: (custom) => ({
+      x: 0,
+      opacity: 1,
+      ease: "easeOut",
+      transition: { duration: custom * 0.3, delay: custom * 0.5 },
+    }),
+  };
 
   return (
     <div>
@@ -32,16 +36,16 @@ const textVariants = {
         className="homeBody"
       >
         <motion.h1
-          initial={'hidden'}
-          animate={'vsisible'}
+          initial={"hidden"}
+          animate={"vsisible"}
           custom={1}
           variants={textVariants}
         >
           Welcome to Triple Consult
         </motion.h1>
         <motion.h3
-          initial={'hidden'}
-          animate={'vsisible'}
+          initial={"hidden"}
+          animate={"vsisible"}
           custom={2}
           variants={textVariants}
         >
@@ -52,32 +56,34 @@ const textVariants = {
           a cloudy day,{" "}
         </motion.h3>
       </motion.div>
-      <div className="homeContainer">
-        <h1>OUR SERVICES:</h1>
-        <ServicesTabs />
-      </div>
-      <section className={styles.section_card_grid}>
-        <motion.h1
-        initial= {{
-          y: -100,
-          opacity: 0,
-        }}
-        transition={{
-          duration: 0.3,
-        }}
-        whileInView={
-          {y: 0,
-          opacity: 1,
-        }}
-        viewport={{amount: 0.2, once: true}}
-        >how we work:</motion.h1>
-        <motion.div
-        viewport={{amount: 0.2, once: true}}
-         className={styles.home_container_secGrid}>
-          <Card />
-        </motion.div>
-      </section>
-    <Footer/>
+      <Suspense fallback={<Loader />}>
+        <div className="homeContainer">
+          <h1>OUR SERVICES:</h1>
+          <ServicesTabs />
+        </div>
+        <section className={styles.section_card_grid}>
+          <motion.h1
+            initial={{
+              y: -100,
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.3,
+            }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ amount: 0.2, once: true }}
+          >
+            how we work:
+          </motion.h1>
+          <motion.div
+            viewport={{ amount: 0.2, once: true }}
+            className={styles.home_container_secGrid}
+          >
+            <Card />
+          </motion.div>
+        </section>
+      </Suspense>
+      <Footer />
     </div>
   );
 };
