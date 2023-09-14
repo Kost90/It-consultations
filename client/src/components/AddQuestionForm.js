@@ -30,8 +30,6 @@ export const AddQuestionForm = memo(({ id, from }) => {
   const onSubmit = useCallback((data) => {
     const newData = {
       ...data,
-      titel: Titel,
-      to: to,
       from: from,
       UsersID: id,
     };
